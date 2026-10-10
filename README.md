@@ -26,11 +26,12 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
-## Login prototype
-The static login currently uses the demo credentials `vva` / `studio2026`. The credential check and session flag run in browser JavaScript, so both can be inspected or bypassed. Do not use this as protection for private content, and do not reuse the demo password. Replace this prototype with server-side or managed authentication before using it for real access control.
+## Publishing
+The site is public and does not use a login. GitHub Pages deployment is handled by the workflow in `.github/workflows/deploy-pages.yml`; after it is pushed to `main`, share the Pages URL shown in the repository's **Settings → Pages**.
 
 ## Security before publishing
 - Keep passwords, API keys, private keys, and personal data out of tracked files; use environment variables or a secrets manager for server-side secrets.
 - Review `git status` and the staged diff before each commit, and rotate any credential that may have been committed.
-- Use HTTPS, secure session cookies, rate limiting, and least-privilege access when adding a real authentication backend.
+- Do not add client-side password checks to this static site; they cannot protect content that is delivered to visitors.
+- Use HTTPS, secure session cookies, rate limiting, and least-privilege access if adding a real authentication backend.
 - Enable two-factor authentication on GitHub and use fine-grained tokens with only the required repository permissions.
