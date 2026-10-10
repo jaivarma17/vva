@@ -27,7 +27,7 @@ python -m http.server 8000
 Then open `http://localhost:8000`.
 
 ## Publishing
-The site is public and does not use a login. GitHub Pages deployment is handled by the workflow in `.github/workflows/deploy-pages.yml`; after it is pushed to `main`, share the Pages URL shown in the repository's **Settings → Pages**.
+The site is public and does not use a login. GitHub Pages deployment is handled by the workflow in `.github/workflows/deploy-pages.yml`. To enable the first deployment, open the repository's **Settings → Pages** and set the publishing source to **GitHub Actions**. Then run **Deploy GitHub Pages** from the **Actions** tab. The public URL is `https://jaivarma17.github.io/vva/`.
 
 ## Security before publishing
 - Keep passwords, API keys, private keys, and personal data out of tracked files; use environment variables or a secrets manager for server-side secrets.
