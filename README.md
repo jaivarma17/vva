@@ -9,13 +9,15 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
 - `scripts/projects.js` — all project data + full-screen popup behavior
-- `assets/demo-*.svg` — local demo images, easy to replace later
+- `assets/img/projects/` — local project images used by the homepage and project gallery
 
 ## Project editing
 Edit the `projects` array in `scripts/projects.js`. Each project has:
 `title`, `location`, `year`, `type`, `image`, `gallery`, `short`, `lede`, and `copy`.
 
 The `short` field is visually clamped to two lines in the project index. Clicking a card opens a full-screen case-study overlay.
+
+Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
 
 ## Preview
 Run from this folder:
