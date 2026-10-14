@@ -23,12 +23,11 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/my-eye-hospital.jpg",
+    image: "assets/img/projects/my-eye-hospital/02.jpg",
     facts: ["90 bed hospital", "1,00,000 sft, 2.5 acre", "Architecture & Interiors", "Client: Dr Gaonkar"],
     short: "A wellness-led hospital campus planned around courtyard light and cross ventilation.",
     lede: "A 90-bed eye hospital and wellness centre where the courtyard, not the corridor, organises the plan.",
     gallery: [
-      "assets/img/projects/my-eye-hospital/02.jpg",
       "assets/img/projects/my-eye-hospital/03.jpg",
       "assets/img/projects/my-eye-hospital/04.jpg",
       "assets/img/projects/my-eye-hospital/05.jpg",
@@ -719,12 +718,11 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/eco-resort-stok-ladakh.jpg",
+    image: "assets/img/projects/eco-resort-stok-ladakh/02.jpg",
     facts: ["30,000 sft", "Architecture, Interiors & Landscaping", "Client: Good Earth Ecotourism"],
     short: "A 30,000 sft eco resort in Ladakh, built to the constraints of a high-altitude desert.",
     lede: "A resort built for Ladakh's extremes — high altitude, low rainfall, and a short building season.",
     gallery: [
-      "assets/img/projects/eco-resort-stok-ladakh/02.jpg",
       "assets/img/projects/eco-resort-stok-ladakh/03.jpg",
       "assets/img/projects/eco-resort-stok-ladakh/04.jpg",
       "assets/img/projects/eco-resort-stok-ladakh/05.jpg"
@@ -989,13 +987,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/hermitage-chalets-aamby-valley.jpg",
+    image: "assets/img/projects/hermitage-chalets-aamby-valley/03.jpg",
     facts: ["Part of the Timber Resort, Aamby Valley (2,00,000 sft, 50 acre)", "Client: Sahara India"],
     short: "A cluster of stone-and-timber hermitage chalets stepped into the Aamby Valley hillside.",
     lede: "A group of hermitage chalets, each a stone-based, timber-topped retreat against the hills.",
     gallery: [
       "assets/img/projects/hermitage-chalets-aamby-valley/02.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/03.jpg",
       "assets/img/projects/hermitage-chalets-aamby-valley/04.jpg",
       "assets/img/projects/hermitage-chalets-aamby-valley/05.jpg",
       "assets/img/projects/hermitage-chalets-aamby-valley/06.jpg",
@@ -1144,13 +1141,12 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/silverglades-farms-tarudhan.jpg",
+    image: "assets/img/projects/silverglades-farms-tarudhan/03.jpg",
     facts: ["7.5 acre", "Residential development", "Client: Silverglades"],
     short: "A 7.5-acre residential farm development adjoining the ITC Classic Golf Course in Manesar.",
     lede: "A 7.5-acre farm residence community planned alongside an existing championship golf course.",
     gallery: [
       "assets/img/projects/silverglades-farms-tarudhan/02.jpg",
-      "assets/img/projects/silverglades-farms-tarudhan/03.jpg",
       "assets/img/projects/silverglades-farms-tarudhan/04.jpg",
       "assets/img/projects/silverglades-farms-tarudhan/05.jpg"
     ],
@@ -1379,13 +1375,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/conservatory-dlf.jpg",
+    image: "assets/img/projects/conservatory-dlf/03.jpg",
     facts: ["Concept design", "Interiors"],
     short: "An interior concept for a conservatory space, developed in multiple view studies.",
     lede: "A conservatory interior worked through a series of concept views.",
     gallery: [
       "assets/img/projects/conservatory-dlf/02.jpg",
-      "assets/img/projects/conservatory-dlf/03.jpg",
       "assets/img/projects/conservatory-dlf/04.jpg",
       "assets/img/projects/conservatory-dlf/05.jpg",
       "assets/img/projects/conservatory-dlf/06.jpg",
@@ -1409,14 +1404,13 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/panchsheel-park-club-pool.jpg",
+    image: "assets/img/projects/panchsheel-park-club-pool/04.jpg",
     facts: ["Concept design", "Panchsheel Park Society Club"],
     short: "A concept pool and clubhouse design for Panchsheel Park Society Club.",
     lede: "A pool and club concept for the Panchsheel Park community.",
     gallery: [
       "assets/img/projects/panchsheel-park-club-pool/02.jpg",
       "assets/img/projects/panchsheel-park-club-pool/03.jpg",
-      "assets/img/projects/panchsheel-park-club-pool/04.jpg",
       "assets/img/projects/panchsheel-park-club-pool/05.jpg",
       "assets/img/projects/panchsheel-park-club-pool/06.jpg"
     ],
@@ -1493,13 +1487,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/vasant-kunj-farm.jpg",
+    image: "assets/img/projects/vasant-kunj-farm/03.jpg",
     facts: ["Concept design"],
     short: "A concept farmhouse design for a Vasant Kunj site.",
     lede: "A farmhouse concept for a Vasant Kunj plot on Delhi's southern edge.",
     gallery: [
       "assets/img/projects/vasant-kunj-farm/02.jpg",
-      "assets/img/projects/vasant-kunj-farm/03.jpg",
       "assets/img/projects/vasant-kunj-farm/04.jpg",
       "assets/img/projects/vasant-kunj-farm/05.jpg",
       "assets/img/projects/vasant-kunj-farm/06.jpg",
@@ -1522,13 +1515,12 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/ashtang-yog-ashram-syaat.jpg",
+    image: "assets/img/projects/ashtang-yog-ashram-syaat/03.jpg",
     facts: ["Concept design", "Client: SYAAT"],
     short: "A concept design for the Ashtang Yog Ashram developed for SYAAT.",
     lede: "An ashram concept developed for the SYAAT trust.",
     gallery: [
       "assets/img/projects/ashtang-yog-ashram-syaat/02.jpg",
-      "assets/img/projects/ashtang-yog-ashram-syaat/03.jpg",
       "assets/img/projects/ashtang-yog-ashram-syaat/04.jpg",
       "assets/img/projects/ashtang-yog-ashram-syaat/05.jpg"
     ],
