@@ -1679,29 +1679,12 @@ var projects = [
     return Object.keys(SERVICE_LABELS).filter(function (key) { return !!p.services[key]; });
   }
 
-  function serviceTagsHTML(p) {
-    var keys = activeServices(p);
-    if (!keys.length) return "";
-    return '<div class="project-tags">' + keys.map(function (key) {
-      return '<span class="tag">' + SERVICE_LABELS[key] + "</span>";
-    }).join("") + "</div>";
-  }
-
   /* ---------- Grid ---------- */
   function renderGrid() {
-    grid.innerHTML = projects.map(function (p, i) {
+    grid.innerHTML = projects.map(function (p) {
       return (
         '<button class="project-card" type="button" data-id="' + p.id + '">' +
           '<div class="project-media"><img src="' + p.image + '" alt="' + p.title + '" loading="lazy"></div>' +
-          '<div class="project-meta">' +
-            '<div>' +
-              '<span class="project-status' + (p.status === "built" ? ' is-built' : '') + '">' + statusLabel(p) + '</span>' +
-              '<h3 class="project-title">' + p.title + '</h3>' +
-              '<p class="project-desc">' + p.short + '</p>' +
-              serviceTagsHTML(p) +
-            '</div>' +
-            '<span class="project-index">' + pad(i + 1) + ' / ' + pad(projects.length) + '</span>' +
-          '</div>' +
         '</button>'
       );
     }).join("");
