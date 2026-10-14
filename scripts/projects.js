@@ -126,12 +126,11 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/delphi-resort.jpg",
+    image: "assets/img/projects/delphi-resort/02.jpg",
     facts: ["20,000 sft, 5 acre", "Architecture & Interiors", "Boutique resort"],
     short: "A boutique resort on a 5-acre site, built low and close to the ground it sits on.",
     lede: "A small resort designed to sit lightly on a 5-acre site above Canacona's coastline.",
     gallery: [
-      "assets/img/projects/delphi-resort/02.jpg",
       "assets/img/projects/delphi-resort/03.jpg",
       "assets/img/projects/delphi-resort/04.jpg",
       "assets/img/projects/delphi-resort/05.jpg",
