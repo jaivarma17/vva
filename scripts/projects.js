@@ -1624,8 +1624,11 @@ var projects = [
   var AUTOPLAY_MS = 3000;
 
   var grid = document.getElementById("projects");
+  var projectList = document.getElementById("project-card-grid");
+  var filterBar = document.getElementById("project-filters");
+  var resultCount = document.getElementById("project-result-count");
   var modal = document.getElementById("project-modal");
-  if (!grid || !modal) return;
+  if (!grid || !projectList || !filterBar || !resultCount || !modal) return;
 
   var modalTitle = document.getElementById("modal-title");
   var modalLede = document.getElementById("modal-lede");
@@ -1652,6 +1655,18 @@ var projects = [
     masterPlan: "Master Plan"
   };
 
+  var PROJECT_GROUPS = [
+    { id: "residential", label: "Residential", matches: function (p) { return p.category === "residential"; } },
+    { id: "architecture", label: "Architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
+    { id: "master-planning", label: "Master Planning", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
+    { id: "hospitality", label: "Hospitality", matches: function (p) { return p.category === "hospitality"; } },
+    { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } },
+    { id: "landscape", label: "Landscape", matches: function (p) { return !!(p.services && p.services.landscape); } },
+    { id: "interior-design", label: "Interior Design", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
+    { id: "design-build", label: "Design Build", matches: function (p) { return !!(p.services && p.services.designBuild); } }
+  ];
+  var currentFilter = "all";
+
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var slides = [];
@@ -1672,17 +1687,58 @@ var projects = [
 
   /* ---------- Grid ---------- */
   function renderGrid() {
-    grid.innerHTML = projects.map(function (p) {
+    var availableGroups = PROJECT_GROUPS.filter(function (group) {
+      return projects.some(group.matches);
+    });
+
+    filterBar.innerHTML = '<button class="project-filter" type="button" data-filter="all" aria-pressed="true">All</button>' +
+      availableGroups.map(function (group) {
+        return '<button class="project-filter" type="button" data-filter="' + group.id + '" aria-pressed="false">' + group.label + '</button>';
+      }).join("");
+
+    filterBar.querySelectorAll(".project-filter").forEach(function (button) {
+      button.addEventListener("click", function () {
+        setProjectFilter(button.getAttribute("data-filter"), true);
+      });
+    });
+
+    setProjectFilter(window.location.hash.slice(1), false);
+    window.addEventListener("hashchange", function () {
+      setProjectFilter(window.location.hash.slice(1), false);
+    });
+  }
+
+  function setProjectFilter(filterId, updateUrl) {
+    var selectedGroup = PROJECT_GROUPS.find(function (group) { return group.id === filterId; });
+    currentFilter = selectedGroup ? selectedGroup.id : "all";
+
+    var visibleProjects = currentFilter === "all"
+      ? projects
+      : projects.filter(selectedGroup.matches);
+
+    filterBar.querySelectorAll(".project-filter").forEach(function (button) {
+      var isActive = button.getAttribute("data-filter") === currentFilter;
+      button.setAttribute("aria-pressed", String(isActive));
+      button.classList.toggle("is-active", isActive);
+    });
+
+    projectList.innerHTML = visibleProjects.map(function (p) {
       return (
-        '<button class="project-card" type="button" data-id="' + p.id + '">' +
-          '<div class="project-media"><img src="' + p.image + '" alt="' + p.title + '" loading="lazy"></div>' +
+        '<button class="project-card" type="button" data-id="' + p.id + '" aria-label="View ' + p.title + ', ' + p.location + '">' +
+          '<div class="project-media"><img src="' + p.image + '" alt="" loading="lazy"></div>' +
+          '<span class="project-caption"><span class="project-name">' + p.title + '</span><span class="project-location">' + p.location + '</span></span>' +
         '</button>'
       );
     }).join("");
 
-    grid.querySelectorAll(".project-card").forEach(function (card) {
+    resultCount.textContent = "Showing " + visibleProjects.length + " projects";
+    projectList.querySelectorAll(".project-card").forEach(function (card) {
       card.addEventListener("click", function () { openProject(card.getAttribute("data-id")); });
     });
+
+    if (updateUrl) {
+      window.history.replaceState(null, "", currentFilter === "all" ? "#projects" : "#" + currentFilter);
+    }
   }
 
   /* ---------- Slideshow ---------- */

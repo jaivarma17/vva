@@ -4,7 +4,7 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 
 ## Structure
 - `index.html` — minimal landing page and philosophy
-- `projects.html` — two-column project index
+- `projects.html` — filterable, two-column project index
 - `about.html` — studio / philosophy / work method
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
@@ -13,9 +13,9 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 
 ## Project editing
 Edit the `projects` array in `scripts/projects.js`. Each project has:
-`title`, `location`, `year`, `type`, `image`, `gallery`, `short`, `lede`, and `copy`.
+`title`, `location`, `category`, `status`, `services`, `image`, `facts`, `gallery`, `short`, `lede`, and `copy`. The Projects page filters by category and enabled services. Projects with multiple disciplines appear in each relevant filter and only once in the All view.
 
-The `short` field is visually clamped to two lines in the project index. Clicking a card opens a full-screen case-study overlay.
+Clicking a project card opens a full-screen case-study overlay.
 
 Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
 
