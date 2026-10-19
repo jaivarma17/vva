@@ -1,7 +1,7 @@
-// Studio VVA — project data + index/modal behaviour
+// Studio VVA â€” project data + index/modal behaviour
 // Edit the objects below to add, remove or update projects.
-// status: "built" or "concept" — shown as a small badge on the card and in the modal.
-// services: toggle which service tags show on the card/modal — set any of these
+// status: "built" or "concept" â€” shown as a small badge on the card and in the modal.
+// services: toggle which service tags show on the card/modal â€” set any of these
 //   true/false per project: architecture, landscape, interiorDesign, designBuild, masterPlan.
 // facts: short spec lines shown on the card and in the modal.
 // short: one or two lines, clamped to 2 lines on the index card.
@@ -23,35 +23,42 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/my-eye-hospital/02.jpg",
+    image: "assets/img/projects/ppt-sourced/my-eye-hospital/001.jpg",
     facts: ["90 bed hospital", "1,00,000 sft, 2.5 acre", "Architecture & Interiors", "Client: Dr Gaonkar"],
     short: "A wellness-led hospital campus planned around courtyard light and cross ventilation.",
     lede: "A 90-bed eye hospital and wellness centre where the courtyard, not the corridor, organises the plan.",
     gallery: [
-      "assets/img/projects/my-eye-hospital/03.jpg",
-      "assets/img/projects/my-eye-hospital/04.jpg",
-      "assets/img/projects/my-eye-hospital/05.jpg",
-      "assets/img/projects/my-eye-hospital/06.jpg",
-      "assets/img/projects/my-eye-hospital/07.jpg",
-      "assets/img/projects/my-eye-hospital/08.jpg",
-      "assets/img/projects/my-eye-hospital/09.jpg",
-      "assets/img/projects/my-eye-hospital/10.jpg",
-      "assets/img/projects/my-eye-hospital/11.jpg",
-      "assets/img/projects/my-eye-hospital/12.jpg",
-      "assets/img/projects/my-eye-hospital/13.jpg",
-      "assets/img/projects/my-eye-hospital/14.jpg",
-      "assets/img/projects/my-eye-hospital/15.jpg",
-      "assets/img/projects/my-eye-hospital/16.jpg",
-      "assets/img/projects/my-eye-hospital/17.jpg",
-      "assets/img/projects/my-eye-hospital/18.jpg",
-      "assets/img/projects/my-eye-hospital/19.jpg",
-      "assets/img/projects/my-eye-hospital/20.jpg",
-      "assets/img/projects/my-eye-hospital/21.jpg"
+      "assets/img/projects/ppt-sourced/my-eye-hospital/002.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/003.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/004.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/005.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/006.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/007.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/008.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/009.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/010.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/011.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/012.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/013.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/014.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/015.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/016.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/017.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/018.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/019.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/020.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/021.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/022.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/023.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/024.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/025.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/026.jpg",
+      "assets/img/projects/ppt-sourced/my-eye-hospital/027.jpg",
     ],
     copy: [
       "The brief called for a hospital that did not read as one. Patient wards, consulting suites and recovery gardens are arranged around a sequence of internal courtyards, so daylight and air move through the building rather than around it.",
       "Passive cooling and daylighting reduce the load on mechanical systems across the 2.5-acre site, in keeping with the studio's long-standing focus on wellness architecture.",
-      "Interiors carry the same calm through to material choice — stone, timber and soft, indirect light replace the clinical palette usually associated with hospital design."
+      "Interiors carry the same calm through to material choice â€” stone, timber and soft, indirect light replace the clinical palette usually associated with hospital design."
     ]
   },
   {
@@ -67,45 +74,50 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/golf-academy-aamby.jpg",
+    image: "assets/img/projects/ppt-sourced/golf-academy-aamby/001.jpg",
     facts: ["35,000 sft", "Architecture & Interiors", "Client: Sahara India"],
     short: "A golf academy and clubhouse set into the folds of the Aamby Valley landscape.",
     lede: "A clubhouse and teaching academy that steps down the valley slope instead of levelling it.",
     gallery: [
-      "assets/img/projects/golf-academy-aamby/02.jpg",
-      "assets/img/projects/golf-academy-aamby/03.jpg",
-      "assets/img/projects/golf-academy-aamby/04.jpg",
-      "assets/img/projects/golf-academy-aamby/05.jpg",
-      "assets/img/projects/golf-academy-aamby/06.jpg",
-      "assets/img/projects/golf-academy-aamby/07.jpg",
-      "assets/img/projects/golf-academy-aamby/08.jpg",
-      "assets/img/projects/golf-academy-aamby/09.jpg",
-      "assets/img/projects/golf-academy-aamby/10.jpg",
-      "assets/img/projects/golf-academy-aamby/11.jpg",
-      "assets/img/projects/golf-academy-aamby/12.jpg",
-      "assets/img/projects/golf-academy-aamby/13.jpg",
-      "assets/img/projects/golf-academy-aamby/14.jpg",
-      "assets/img/projects/golf-academy-aamby/15.jpg",
-      "assets/img/projects/golf-academy-aamby/16.jpg",
-      "assets/img/projects/golf-academy-aamby/17.jpg",
-      "assets/img/projects/golf-academy-aamby/18.jpg",
-      "assets/img/projects/golf-academy-aamby/19.jpg",
-      "assets/img/projects/golf-academy-aamby/20.jpg",
-      "assets/img/projects/golf-academy-aamby/21.jpg",
-      "assets/img/projects/golf-academy-aamby/22.jpg",
-      "assets/img/projects/golf-academy-aamby/23.jpg",
-      "assets/img/projects/golf-academy-aamby/24.jpg",
-      "assets/img/projects/golf-academy-aamby/25.jpg",
-      "assets/img/projects/golf-academy-aamby/26.jpg",
-      "assets/img/projects/golf-academy-aamby/27.jpg",
-      "assets/img/projects/golf-academy-aamby/28.jpg",
-      "assets/img/projects/golf-academy-aamby/29.jpg",
-      "assets/img/projects/golf-academy-aamby/30.jpg",
-      "assets/img/projects/golf-academy-aamby/31.jpg",
-      "assets/img/projects/golf-academy-aamby/32.jpg",
-      "assets/img/projects/golf-academy-aamby/33.jpg",
-      "assets/img/projects/golf-academy-aamby/34.jpg",
-      "assets/img/projects/golf-academy-aamby/35.jpg"
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/002.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/003.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/004.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/005.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/006.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/007.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/008.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/009.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/010.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/011.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/012.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/013.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/014.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/015.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/016.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/017.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/018.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/019.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/020.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/021.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/022.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/023.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/024.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/025.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/026.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/027.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/028.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/029.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/030.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/031.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/032.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/033.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/034.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/035.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/036.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/037.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/038.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/039.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-aamby/040.jpg",
     ],
     copy: [
       "The building follows the natural grade of the site, with the academy, pro shop and dining terrace stepping down toward the course rather than sitting on a flattened plinth.",
@@ -125,49 +137,55 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/delphi-resort/02.jpg",
+    image: "assets/img/projects/ppt-sourced/delphi-resort/001.jpg",
     facts: ["20,000 sft, 5 acre", "Architecture & Interiors", "Boutique resort"],
     short: "A boutique resort on a 5-acre site, built low and close to the ground it sits on.",
     lede: "A small resort designed to sit lightly on a 5-acre site above Canacona's coastline.",
     gallery: [
-      "assets/img/projects/delphi-resort/03.jpg",
-      "assets/img/projects/delphi-resort/04.jpg",
-      "assets/img/projects/delphi-resort/05.jpg",
-      "assets/img/projects/delphi-resort/06.jpg",
-      "assets/img/projects/delphi-resort/07.jpg",
-      "assets/img/projects/delphi-resort/08.jpg",
-      "assets/img/projects/delphi-resort/09.jpg",
-      "assets/img/projects/delphi-resort/10.jpg",
-      "assets/img/projects/delphi-resort/11.jpg",
-      "assets/img/projects/delphi-resort/12.jpg",
-      "assets/img/projects/delphi-resort/13.jpg",
-      "assets/img/projects/delphi-resort/14.jpg",
-      "assets/img/projects/delphi-resort/15.jpg",
-      "assets/img/projects/delphi-resort/16.jpg",
-      "assets/img/projects/delphi-resort/17.jpg",
-      "assets/img/projects/delphi-resort/18.jpg",
-      "assets/img/projects/delphi-resort/19.jpg",
-      "assets/img/projects/delphi-resort/20.jpg",
-      "assets/img/projects/delphi-resort/21.jpg",
-      "assets/img/projects/delphi-resort/22.jpg",
-      "assets/img/projects/delphi-resort/23.jpg",
-      "assets/img/projects/delphi-resort/24.jpg",
-      "assets/img/projects/delphi-resort/25.jpg",
-      "assets/img/projects/delphi-resort/26.jpg",
-      "assets/img/projects/delphi-resort/27.jpg",
-      "assets/img/projects/delphi-resort/28.jpg",
-      "assets/img/projects/delphi-resort/29.jpg",
-      "assets/img/projects/delphi-resort/30.jpg",
-      "assets/img/projects/delphi-resort/31.jpg",
-      "assets/img/projects/delphi-resort/32.jpg",
-      "assets/img/projects/delphi-resort/33.jpg",
-      "assets/img/projects/delphi-resort/34.jpg",
-      "assets/img/projects/delphi-resort/35.jpg",
-      "assets/img/projects/delphi-resort/36.jpg",
-      "assets/img/projects/delphi-resort/37.jpg",
-      "assets/img/projects/delphi-resort/38.jpg",
-      "assets/img/projects/delphi-resort/39.jpg",
-      "assets/img/projects/delphi-resort/40.jpg"
+      "assets/img/projects/ppt-sourced/delphi-resort/002.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/003.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/004.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/005.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/006.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/007.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/008.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/009.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/010.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/011.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/012.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/013.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/014.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/015.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/016.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/017.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/018.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/019.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/020.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/021.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/022.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/023.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/024.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/025.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/026.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/027.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/028.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/029.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/030.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/031.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/032.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/033.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/034.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/035.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/036.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/037.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/038.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/039.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/040.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/041.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/042.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/043.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/044.jpg",
+      "assets/img/projects/ppt-sourced/delphi-resort/045.jpg",
     ],
     copy: [
       "Guest villas are dispersed across the site rather than stacked, keeping the built footprint low and preserving the existing tree cover.",
@@ -187,7 +205,7 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/lv-stitching-unit.jpg",
+    image: "assets/img/projects/ppt-sourced/lv-stitching-unit/001.jpg",
     facts: ["2,00,000 sft, 22 acre", "Interiors & landscaping", "Client: Louis Vuitton, Paris"],
     short: "A 22-acre production campus for Louis Vuitton, planned as landscape first, building second.",
     lede: "A 2,00,000 sft stitching unit and office campus planned around its landscape, not against it.",
@@ -209,20 +227,20 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/lv-museum-paris.jpg",
+    image: "assets/img/projects/ppt-sourced/lv-museum-paris/001.jpg",
     facts: ["12 galleries", "MEP & interior detailing coordination", "Client: LV, Paris"],
     short: "Sub-consultancy on interior detailing and MEP coordination across twelve museum galleries.",
     lede: "Twelve galleries, coordinated down to the services that keep the artwork safe.",
     gallery: [
-      "assets/img/projects/lv-museum-paris/01.jpg",
-      "assets/img/projects/lv-museum-paris/02.jpg",
-      "assets/img/projects/lv-museum-paris/03.jpg",
-      "assets/img/projects/lv-museum-paris/04.jpg",
-      "assets/img/projects/lv-museum-paris/05.jpg",
-      "assets/img/projects/lv-museum-paris/06.jpg"
+      "assets/img/projects/ppt-sourced/lv-museum-paris/002.jpg",
+      "assets/img/projects/ppt-sourced/lv-museum-paris/003.jpg",
+      "assets/img/projects/ppt-sourced/lv-museum-paris/004.jpg",
+      "assets/img/projects/ppt-sourced/lv-museum-paris/005.jpg",
+      "assets/img/projects/ppt-sourced/lv-museum-paris/006.jpg",
+      "assets/img/projects/ppt-sourced/lv-museum-paris/007.jpg",
     ],
     copy: [
-      "The studio's role was consultancy, not authorship — sub-consulting on interior detailing and MEP coordination across the museum's twelve galleries, where climate control and lighting have to sit invisibly behind the architecture."
+      "The studio's role was consultancy, not authorship â€” sub-consulting on interior detailing and MEP coordination across the museum's twelve galleries, where climate control and lighting have to sit invisibly behind the architecture."
     ]
   },
   {
@@ -238,25 +256,25 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/five-element-spa-resort.jpg",
+    image: "assets/img/projects/ppt-sourced/five-element-spa-resort/001.jpg",
     facts: ["1,45,000 sft", "Architecture, Interiors & Landscaping", "Client: Sahara India"],
     short: "A destination spa organised around the five elements, set into the Aamby Valley hillside.",
     lede: "A 1,45,000 sft destination spa planned as a sequence of five elemental experiences.",
     gallery: [
-      "assets/img/projects/five-element-spa-resort/01.jpg",
-      "assets/img/projects/five-element-spa-resort/02.jpg",
-      "assets/img/projects/five-element-spa-resort/03.jpg",
-      "assets/img/projects/five-element-spa-resort/04.jpg",
-      "assets/img/projects/five-element-spa-resort/05.jpg",
-      "assets/img/projects/five-element-spa-resort/06.jpg",
-      "assets/img/projects/five-element-spa-resort/07.jpg",
-      "assets/img/projects/five-element-spa-resort/08.jpg",
-      "assets/img/projects/five-element-spa-resort/09.jpg",
-      "assets/img/projects/five-element-spa-resort/10.jpg",
-      "assets/img/projects/five-element-spa-resort/11.jpg"
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/002.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/003.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/004.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/005.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/006.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/007.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/008.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/009.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/010.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/011.jpg",
+      "assets/img/projects/ppt-sourced/five-element-spa-resort/012.jpg",
     ],
     copy: [
-      "Earth, water, fire, air and space each shape a different part of the resort — from treatment pavilions to open-air soaking pools — with architecture, interiors and landscaping developed together rather than handed off in stages."
+      "Earth, water, fire, air and space each shape a different part of the resort â€” from treatment pavilions to open-air soaking pools â€” with architecture, interiors and landscaping developed together rather than handed off in stages."
     ]
   },
   {
@@ -277,7 +295,7 @@ var projects = [
     short: "Concept architecture for Tata's residential training campus in Pune.",
     lede: "A concept design for the campus where Tata trains its own managers.",
     copy: [
-      "Working at concept stage, the brief was to give TMTC's training campus an architectural language suited to focused, residential learning — quiet, orderly, and built around shared courts rather than corridors."
+      "Working at concept stage, the brief was to give TMTC's training campus an architectural language suited to focused, residential learning â€” quiet, orderly, and built around shared courts rather than corridors."
     ]
   },
   {
@@ -293,22 +311,26 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/spa-beach-resort-goa.jpg",
+    image: "assets/img/projects/ppt-sourced/spa-beach-resort-goa/001.jpg",
     facts: ["2,50,000 sft, 12 acre", "Architecture, Interiors & Landscaping"],
     short: "A 12-acre beachfront wellness resort designed end to end, from masterplan to interiors.",
     lede: "A 2,50,000 sft wellness resort where architecture, interiors and landscape were designed as one brief.",
     gallery: [
-      "assets/img/projects/spa-beach-resort-goa/01.jpg",
-      "assets/img/projects/spa-beach-resort-goa/02.jpg",
-      "assets/img/projects/spa-beach-resort-goa/03.jpg",
-      "assets/img/projects/spa-beach-resort-goa/04.jpg",
-      "assets/img/projects/spa-beach-resort-goa/05.jpg",
-      "assets/img/projects/spa-beach-resort-goa/06.jpg",
-      "assets/img/projects/spa-beach-resort-goa/07.jpg",
-      "assets/img/projects/spa-beach-resort-goa/08.jpg"
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/002.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/003.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/004.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/005.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/006.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/007.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/008.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/009.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/010.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/011.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/012.jpg",
+      "assets/img/projects/ppt-sourced/spa-beach-resort-goa/013.jpg",
     ],
     copy: [
-      "Guest villas, spa pavilions and beachfront dining are laid out across a 12-acre site with the landscaping treated as load-bearing to the experience — shade, water and planting doing as much work as the buildings themselves."
+      "Guest villas, spa pavilions and beachfront dining are laid out across a 12-acre site with the landscaping treated as load-bearing to the experience â€” shade, water and planting doing as much work as the buildings themselves."
     ]
   },
   {
@@ -324,28 +346,27 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/wellness-retreat-alwar.jpg",
+    image: "assets/img/projects/ppt-sourced/wellness-retreat-alwar/001.jpg",
     facts: ["400 acre", "Architecture & Interiors", "Client: Intelligent Cities / Central Park"],
     short: "A 400-acre golf-based wellness retreat planned across the Aravalli foothills.",
     lede: "A wellness retreat spread across 400 acres, with golf as one part of a larger landscape.",
     gallery: [
-      "assets/img/projects/wellness-retreat-alwar/01.jpg",
-      "assets/img/projects/wellness-retreat-alwar/02.jpg",
-      "assets/img/projects/wellness-retreat-alwar/03.jpg",
-      "assets/img/projects/wellness-retreat-alwar/04.jpg",
-      "assets/img/projects/wellness-retreat-alwar/05.jpg",
-      "assets/img/projects/wellness-retreat-alwar/06.jpg",
-      "assets/img/projects/wellness-retreat-alwar/07.jpg",
-      "assets/img/projects/wellness-retreat-alwar/08.jpg",
-      "assets/img/projects/wellness-retreat-alwar/09.jpg",
-      "assets/img/projects/wellness-retreat-alwar/10.jpg",
-      "assets/img/projects/wellness-retreat-alwar/11.jpg",
-      "assets/img/projects/wellness-retreat-alwar/12.jpg",
-      "assets/img/projects/wellness-retreat-alwar/13.jpg",
-      "assets/img/projects/wellness-retreat-alwar/14.jpg"
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/002.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/003.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/004.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/005.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/006.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/007.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/008.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/009.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/010.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/011.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/012.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/013.jpg",
+      "assets/img/projects/ppt-sourced/wellness-retreat-alwar/014.jpg",
     ],
     copy: [
-      "At this scale the architecture follows the land rather than the other way round — villas, spa and clubhouse are sited to work with the site's natural contours and water bodies rather than reshape them."
+      "At this scale the architecture follows the land rather than the other way round â€” villas, spa and clubhouse are sited to work with the site's natural contours and water bodies rather than reshape them."
     ]
   },
   {
@@ -361,24 +382,25 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/golf-apartments-aamby.jpg",
+    image: "assets/img/projects/ppt-sourced/golf-apartments-aamby/001.jpg",
     facts: ["6,59,000 sft", "Residential apartments", "Client: Sahara India"],
     short: "A 6,59,000 sft residential apartment community set along the golf course.",
     lede: "A residential community planned around fairway views rather than a central amenity block.",
     gallery: [
-      "assets/img/projects/golf-apartments-aamby/01.jpg",
-      "assets/img/projects/golf-apartments-aamby/02.jpg",
-      "assets/img/projects/golf-apartments-aamby/03.jpg",
-      "assets/img/projects/golf-apartments-aamby/04.jpg",
-      "assets/img/projects/golf-apartments-aamby/05.jpg",
-      "assets/img/projects/golf-apartments-aamby/06.jpg",
-      "assets/img/projects/golf-apartments-aamby/07.jpg",
-      "assets/img/projects/golf-apartments-aamby/08.jpg",
-      "assets/img/projects/golf-apartments-aamby/09.jpg",
-      "assets/img/projects/golf-apartments-aamby/10.jpg",
-      "assets/img/projects/golf-apartments-aamby/11.jpg",
-      "assets/img/projects/golf-apartments-aamby/12.jpg",
-      "assets/img/projects/golf-apartments-aamby/13.jpg"
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/002.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/003.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/004.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/005.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/006.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/007.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/008.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/009.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/010.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/011.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/012.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/013.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/014.jpg",
+      "assets/img/projects/ppt-sourced/golf-apartments-aamby/015.jpg",
     ],
     copy: [
       "Apartment blocks are oriented to the golf course rather than to each other, so most units open onto green, uninterrupted views instead of facing across a courtyard."
@@ -397,38 +419,50 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/sahay-residence.jpg",
+    image: "assets/img/projects/ppt-sourced/sahay-residence/001.jpg",
     facts: ["10,750 sft, 500 sqm"],
     short: "A private residence in Gurugram, designed with the family's day-to-day use as the starting point.",
     lede: "A 10,750 sft house planned around how the family actually uses each room.",
     gallery: [
-      "assets/img/projects/sahay-residence/02.jpg",
-      "assets/img/projects/sahay-residence/03.jpg",
-      "assets/img/projects/sahay-residence/04.jpg",
-      "assets/img/projects/sahay-residence/05.jpg",
-      "assets/img/projects/sahay-residence/06.jpg",
-      "assets/img/projects/sahay-residence/07.jpg",
-      "assets/img/projects/sahay-residence/08.jpg",
-      "assets/img/projects/sahay-residence/09.jpg",
-      "assets/img/projects/sahay-residence/10.jpg",
-      "assets/img/projects/sahay-residence/11.jpg",
-      "assets/img/projects/sahay-residence/12.jpg",
-      "assets/img/projects/sahay-residence/13.jpg",
-      "assets/img/projects/sahay-residence/14.jpg",
-      "assets/img/projects/sahay-residence/15.jpg",
-      "assets/img/projects/sahay-residence/16.jpg",
-      "assets/img/projects/sahay-residence/17.jpg",
-      "assets/img/projects/sahay-residence/18.jpg",
-      "assets/img/projects/sahay-residence/19.jpg",
-      "assets/img/projects/sahay-residence/20.jpg",
-      "assets/img/projects/sahay-residence/21.jpg",
-      "assets/img/projects/sahay-residence/22.jpg",
-      "assets/img/projects/sahay-residence/23.jpg",
-      "assets/img/projects/sahay-residence/24.jpg",
-      "assets/img/projects/sahay-residence/25.jpg"
+      "assets/img/projects/ppt-sourced/sahay-residence/002.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/003.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/004.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/005.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/006.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/007.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/008.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/009.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/010.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/011.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/012.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/013.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/014.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/015.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/016.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/017.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/018.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/019.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/020.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/021.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/022.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/023.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/024.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/025.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/026.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/027.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/028.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/029.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/030.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/031.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/032.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/033.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/034.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/035.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/036.jpg",
+      "assets/img/projects/ppt-sourced/sahay-residence/037.jpg",
     ],
     copy: [
-      "The plan was worked out room by room with the family before it was worked out on paper — the result is a house whose formal moments (the entrance, the stair, the living court) sit alongside very ordinary, well-used everyday spaces."
+      "The plan was worked out room by room with the family before it was worked out on paper â€” the result is a house whose formal moments (the entrance, the stair, the living court) sit alongside very ordinary, well-used everyday spaces."
     ]
   },
   {
@@ -444,34 +478,43 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/chandras-residence.jpg",
+    image: "assets/img/projects/ppt-sourced/chandras-residence/001.jpg",
     facts: ["7,750 sft, 2.5 acre"],
     short: "A farmhouse residence on a 2.5-acre plot at the edge of the city.",
     lede: "A 2.5-acre farmhouse that treats the garden as the main room of the house.",
     gallery: [
-      "assets/img/projects/chandras-residence/02.jpg",
-      "assets/img/projects/chandras-residence/03.jpg",
-      "assets/img/projects/chandras-residence/04.jpg",
-      "assets/img/projects/chandras-residence/05.jpg",
-      "assets/img/projects/chandras-residence/06.jpg",
-      "assets/img/projects/chandras-residence/07.jpg",
-      "assets/img/projects/chandras-residence/08.jpg",
-      "assets/img/projects/chandras-residence/09.jpg",
-      "assets/img/projects/chandras-residence/10.jpg",
-      "assets/img/projects/chandras-residence/11.jpg",
-      "assets/img/projects/chandras-residence/12.jpg",
-      "assets/img/projects/chandras-residence/13.jpg",
-      "assets/img/projects/chandras-residence/14.jpg",
-      "assets/img/projects/chandras-residence/15.jpg",
-      "assets/img/projects/chandras-residence/16.jpg",
-      "assets/img/projects/chandras-residence/17.jpg",
-      "assets/img/projects/chandras-residence/18.jpg",
-      "assets/img/projects/chandras-residence/19.jpg",
-      "assets/img/projects/chandras-residence/20.jpg",
-      "assets/img/projects/chandras-residence/21.jpg"
+      "assets/img/projects/ppt-sourced/chandras-residence/002.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/003.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/004.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/005.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/006.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/007.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/008.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/009.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/010.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/011.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/012.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/013.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/014.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/015.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/016.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/017.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/018.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/019.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/020.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/021.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/022.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/023.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/024.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/025.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/026.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/027.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/028.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/029.jpg",
+      "assets/img/projects/ppt-sourced/chandras-residence/030.jpg",
     ],
     copy: [
-      "Built form is kept low and set back from the boundary, leaving the acreage free for the garden the family actually wanted — the house reads as a pavilion within it, not the other way round."
+      "Built form is kept low and set back from the boundary, leaving the acreage free for the garden the family actually wanted â€” the house reads as a pavilion within it, not the other way round."
     ]
   },
   {
@@ -487,35 +530,43 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/cottage-shamrock.jpg",
+    image: "assets/img/projects/ppt-sourced/cottage-shamrock/001.jpg",
     facts: ["8,000 sft, 7 acre", "Client: ACIL Industries"],
     short: "A hillside cottage retreat on 7 acres in Landour, built to the slope rather than against it.",
     lede: "A Himalayan cottage that steps down 7 acres of Landour hillside instead of cutting into it.",
     gallery: [
-      "assets/img/projects/cottage-shamrock/02.jpg",
-      "assets/img/projects/cottage-shamrock/03.jpg",
-      "assets/img/projects/cottage-shamrock/04.jpg",
-      "assets/img/projects/cottage-shamrock/05.jpg",
-      "assets/img/projects/cottage-shamrock/06.jpg",
-      "assets/img/projects/cottage-shamrock/07.jpg",
-      "assets/img/projects/cottage-shamrock/08.jpg",
-      "assets/img/projects/cottage-shamrock/09.jpg",
-      "assets/img/projects/cottage-shamrock/10.jpg",
-      "assets/img/projects/cottage-shamrock/11.jpg",
-      "assets/img/projects/cottage-shamrock/12.jpg",
-      "assets/img/projects/cottage-shamrock/13.jpg",
-      "assets/img/projects/cottage-shamrock/14.jpg",
-      "assets/img/projects/cottage-shamrock/15.jpg",
-      "assets/img/projects/cottage-shamrock/16.jpg",
-      "assets/img/projects/cottage-shamrock/17.jpg",
-      "assets/img/projects/cottage-shamrock/18.jpg",
-      "assets/img/projects/cottage-shamrock/19.jpg",
-      "assets/img/projects/cottage-shamrock/20.jpg",
-      "assets/img/projects/cottage-shamrock/21.jpg",
-      "assets/img/projects/cottage-shamrock/22.jpg",
-      "assets/img/projects/cottage-shamrock/23.jpg",
-      "assets/img/projects/cottage-shamrock/24.jpg",
-      "assets/img/projects/cottage-shamrock/25.jpg"
+      "assets/img/projects/ppt-sourced/cottage-shamrock/002.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/003.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/004.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/005.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/006.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/007.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/008.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/009.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/010.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/011.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/012.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/013.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/014.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/015.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/016.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/017.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/018.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/019.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/020.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/021.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/022.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/023.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/024.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/025.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/026.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/027.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/028.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/029.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/030.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/031.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/032.jpg",
+      "assets/img/projects/ppt-sourced/cottage-shamrock/033.jpg",
     ],
     copy: [
       "The building is broken into smaller stepped volumes that follow the natural fall of the land, keeping cut-and-fill to a minimum and giving most rooms a direct view out over the valley."
@@ -534,26 +585,28 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/tideman-residence.jpg",
+    image: "assets/img/projects/ppt-sourced/tideman-residence/001.jpg",
     facts: ["7,500 sft, 500 sqm"],
     short: "A private house in Pune built around a compact, efficient footprint.",
     lede: "A 7,500 sft house designed for a family that wanted less house, not more.",
     gallery: [
-      "assets/img/projects/tideman-residence/02.jpg",
-      "assets/img/projects/tideman-residence/03.jpg",
-      "assets/img/projects/tideman-residence/04.jpg",
-      "assets/img/projects/tideman-residence/05.jpg",
-      "assets/img/projects/tideman-residence/06.jpg",
-      "assets/img/projects/tideman-residence/07.jpg",
-      "assets/img/projects/tideman-residence/08.jpg",
-      "assets/img/projects/tideman-residence/09.jpg",
-      "assets/img/projects/tideman-residence/10.jpg",
-      "assets/img/projects/tideman-residence/11.jpg",
-      "assets/img/projects/tideman-residence/12.jpg",
-      "assets/img/projects/tideman-residence/13.jpg"
+      "assets/img/projects/ppt-sourced/tideman-residence/002.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/003.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/004.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/005.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/006.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/007.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/008.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/009.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/010.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/011.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/012.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/013.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/014.jpg",
+      "assets/img/projects/ppt-sourced/tideman-residence/015.jpg",
     ],
     copy: [
-      "Rather than maximising built area, the brief pushed the other way — a tighter, more efficient plan with fewer, better-used rooms, and the savings in footprint spent instead on light and outdoor space."
+      "Rather than maximising built area, the brief pushed the other way â€” a tighter, more efficient plan with fewer, better-used rooms, and the savings in footprint spent instead on light and outdoor space."
     ]
   },
   {
@@ -569,22 +622,21 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/kailasa-coonoor.jpg",
+    image: "assets/img/projects/ppt-sourced/kailasa-coonoor/001.jpg",
     facts: ["20 acre", "Net-zero planning", "Client: Vikas Trust"],
     short: "An ashram and alternate-living community on 20 acres, planned to net-zero principles.",
     lede: "A 20-acre ashram community designed as an integrated, net-zero settlement.",
     gallery: [
-      "assets/img/projects/kailasa-coonoor/01.jpg",
-      "assets/img/projects/kailasa-coonoor/02.jpg",
-      "assets/img/projects/kailasa-coonoor/03.jpg",
-      "assets/img/projects/kailasa-coonoor/04.jpg",
-      "assets/img/projects/kailasa-coonoor/05.jpg",
-      "assets/img/projects/kailasa-coonoor/06.jpg",
-      "assets/img/projects/kailasa-coonoor/07.jpg",
-      "assets/img/projects/kailasa-coonoor/08.jpg",
-      "assets/img/projects/kailasa-coonoor/09.jpg",
-      "assets/img/projects/kailasa-coonoor/10.jpg",
-      "assets/img/projects/kailasa-coonoor/11.jpg"
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/002.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/003.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/004.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/005.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/006.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/007.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/008.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/009.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/010.jpg",
+      "assets/img/projects/ppt-sourced/kailasa-coonoor/011.jpg",
     ],
     copy: [
       "Domed meditation halls, shared living quarters and communal courts are planned together as one settlement rather than a set of separate buildings, with energy, water and waste handled on-site as part of the design brief."
@@ -603,22 +655,22 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/mds-factory-palwal.jpg",
+    image: "assets/img/projects/ppt-sourced/mds-factory-palwal/001.jpg",
     facts: ["60,000 sft, 6 acre", "Client: Mahindra Defence Systems"],
     short: "A factory and corporate office building for Mahindra Defence Systems on a 6-acre plot.",
     lede: "A 60,000 sft factory and office building planned for a defence-manufacturing client.",
     gallery: [
-      "assets/img/projects/mds-factory-palwal/02.jpg",
-      "assets/img/projects/mds-factory-palwal/03.jpg",
-      "assets/img/projects/mds-factory-palwal/04.jpg",
-      "assets/img/projects/mds-factory-palwal/05.jpg",
-      "assets/img/projects/mds-factory-palwal/06.jpg",
-      "assets/img/projects/mds-factory-palwal/07.jpg",
-      "assets/img/projects/mds-factory-palwal/08.jpg",
-      "assets/img/projects/mds-factory-palwal/09.jpg",
-      "assets/img/projects/mds-factory-palwal/10.jpg",
-      "assets/img/projects/mds-factory-palwal/11.jpg",
-      "assets/img/projects/mds-factory-palwal/12.jpg"
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/002.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/003.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/004.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/005.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/006.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/007.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/008.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/009.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/010.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/011.jpg",
+      "assets/img/projects/ppt-sourced/mds-factory-palwal/012.jpg",
     ],
     copy: [
       "Production and administration are organised as distinct but connected blocks, so the corporate offices read as a considered front to the plant rather than an afterthought bolted onto the factory shed."
@@ -637,23 +689,24 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/ritz-restaurant-lucknow.jpg",
+    image: "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/001.jpg",
     facts: ["Interiors"],
     short: "Interior design for a speciality restaurant at the Ritz in Lucknow.",
     lede: "An interior fit-out built around the pace and theatre of an open dining room.",
     gallery: [
-      "assets/img/projects/ritz-restaurant-lucknow/02.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/03.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/04.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/05.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/06.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/07.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/08.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/09.jpg",
-      "assets/img/projects/ritz-restaurant-lucknow/10.jpg"
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/002.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/003.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/004.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/005.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/006.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/007.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/008.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/009.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/010.jpg",
+      "assets/img/projects/ppt-sourced/ritz-restaurant-lucknow/011.jpg",
     ],
     copy: [
-      "The interiors were designed to carry a restaurant's daily rhythm — seating, lighting and service lines worked out together so the room performs as well at a quiet lunch as on a full evening."
+      "The interiors were designed to carry a restaurant's daily rhythm â€” seating, lighting and service lines worked out together so the room performs as well at a quiet lunch as on a full evening."
     ]
   },
   {
@@ -669,13 +722,13 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/golf-academy-ansals.jpg",
+    image: "assets/img/projects/ppt-sourced/golf-academy-ansals/001.jpg",
     facts: ["13,000 sft", "Client: Ansals API"],
     short: "A 13,000 sft golf academy and clubhouse for Ansals API in Lucknow.",
     lede: "A compact clubhouse and academy built to sit comfortably along the fairway.",
     gallery: [
-      "assets/img/projects/golf-academy-ansals/02.jpg",
-      "assets/img/projects/golf-academy-ansals/03.jpg"
+      "assets/img/projects/ppt-sourced/golf-academy-ansals/002.jpg",
+      "assets/img/projects/ppt-sourced/golf-academy-ansals/003.jpg",
     ],
     copy: [
       "A low, deep-eaved clubhouse anchors the academy, with teaching bays and the pro shop opening directly onto the driving range rather than being tucked behind it."
@@ -694,15 +747,15 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/golf-course-masterplans.jpg",
+    image: "assets/img/projects/ppt-sourced/golf-course-masterplans/001.jpg",
     facts: ["Golf course master planning"],
     short: "Master planning for golf-led developments in Maharashtra and Bangaluru.",
     lede: "Master plans for two golf-led developments, worked out at the scale of the land itself.",
     gallery: [
-      "assets/img/projects/golf-course-masterplans/01.jpg"
+      "assets/img/projects/ppt-sourced/golf-course-masterplans/002.jpg",
     ],
     copy: [
-      "At masterplan stage the work is about sequencing — holes, water bodies, villas and infrastructure are laid out together so the golf course and the real estate around it support each other rather than compete for the same ground."
+      "At masterplan stage the work is about sequencing â€” holes, water bodies, villas and infrastructure are laid out together so the golf course and the real estate around it support each other rather than compete for the same ground."
     ]
   },
   {
@@ -718,14 +771,15 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/eco-resort-stok-ladakh/02.jpg",
+    image: "assets/img/projects/ppt-sourced/eco-resort-stok-ladakh/001.jpg",
     facts: ["30,000 sft", "Architecture, Interiors & Landscaping", "Client: Good Earth Ecotourism"],
     short: "A 30,000 sft eco resort in Ladakh, built to the constraints of a high-altitude desert.",
-    lede: "A resort built for Ladakh's extremes — high altitude, low rainfall, and a short building season.",
+    lede: "A resort built for Ladakh's extremes â€” high altitude, low rainfall, and a short building season.",
     gallery: [
-      "assets/img/projects/eco-resort-stok-ladakh/03.jpg",
-      "assets/img/projects/eco-resort-stok-ladakh/04.jpg",
-      "assets/img/projects/eco-resort-stok-ladakh/05.jpg"
+      "assets/img/projects/ppt-sourced/eco-resort-stok-ladakh/002.jpg",
+      "assets/img/projects/ppt-sourced/eco-resort-stok-ladakh/003.jpg",
+      "assets/img/projects/ppt-sourced/eco-resort-stok-ladakh/004.jpg",
+      "assets/img/projects/ppt-sourced/eco-resort-stok-ladakh/005.jpg",
     ],
     copy: [
       "Local building methods and materials were prioritised throughout, with architecture, interiors and landscaping planned together to minimise both construction impact and ongoing energy use in a fragile high-altitude setting."
@@ -744,29 +798,32 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/namtech-campus-interiors.jpg",
+    image: "assets/img/projects/ppt-sourced/namtech-campus-interiors/001.jpg",
     facts: ["60,000 sft", "Campus interiors", "Client: Arcelor Mittal Nippon Steel"],
     short: "Transitionary campus interiors for NAM:TECH's skills university, hosted at IIT Gandhi Nagar.",
     lede: "60,000 sft of campus interiors built to house a new skills university while its permanent home is built.",
     gallery: [
-      "assets/img/projects/namtech-campus-interiors/02.jpg",
-      "assets/img/projects/namtech-campus-interiors/03.jpg",
-      "assets/img/projects/namtech-campus-interiors/04.jpg",
-      "assets/img/projects/namtech-campus-interiors/05.jpg",
-      "assets/img/projects/namtech-campus-interiors/06.jpg",
-      "assets/img/projects/namtech-campus-interiors/07.jpg",
-      "assets/img/projects/namtech-campus-interiors/08.jpg",
-      "assets/img/projects/namtech-campus-interiors/09.jpg",
-      "assets/img/projects/namtech-campus-interiors/10.jpg",
-      "assets/img/projects/namtech-campus-interiors/11.jpg",
-      "assets/img/projects/namtech-campus-interiors/12.jpg",
-      "assets/img/projects/namtech-campus-interiors/13.jpg",
-      "assets/img/projects/namtech-campus-interiors/14.jpg",
-      "assets/img/projects/namtech-campus-interiors/15.jpg",
-      "assets/img/projects/namtech-campus-interiors/16.jpg"
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/002.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/003.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/004.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/005.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/006.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/007.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/008.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/009.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/010.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/011.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/012.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/013.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/014.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/015.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/016.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/017.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/018.jpg",
+      "assets/img/projects/ppt-sourced/namtech-campus-interiors/019.jpg",
     ],
     copy: [
-      "As a transitionary campus, the interiors had to do double duty — flexible teaching and common spaces that work now, inside an existing IIT building, and that can inform the permanent AMSU campus that follows."
+      "As a transitionary campus, the interiors had to do double duty â€” flexible teaching and common spaces that work now, inside an existing IIT building, and that can inform the permanent AMSU campus that follows."
     ]
   },
   {
@@ -782,12 +839,13 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/desai-residence.jpg",
+    image: "assets/img/projects/ppt-sourced/desai-residence/001.jpg",
     facts: ["9,000 sft, 1,000 sqm"],
     short: "A family house in Madgaon built in timber and laterite, in the Goan residential tradition.",
     lede: "A 9,000 sft house built firmly within Goa's own residential tradition.",
     gallery: [
-      "assets/img/projects/desai-residence/02.jpg"
+      "assets/img/projects/ppt-sourced/desai-residence/002.jpg",
+      "assets/img/projects/ppt-sourced/desai-residence/003.jpg",
     ],
     copy: [
       "Deep sloping roofs, timber balconies and a wraparound verandah place the house within local building custom, while the plan itself is worked out for a contemporary family's everyday use."
@@ -811,7 +869,7 @@ var projects = [
     short: "An adaptive reuse project bringing a Pondicherry residence back into use.",
     lede: "An existing Pondicherry house, carried forward rather than replaced.",
     copy: [
-      "The brief was reuse, not rebuild — retaining as much of the existing structure and French-quarter character as possible while bringing the house up to a contemporary standard of living."
+      "The brief was reuse, not rebuild â€” retaining as much of the existing structure and French-quarter character as possible while bringing the house up to a contemporary standard of living."
     ]
   },
   {
@@ -827,16 +885,15 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/river-front-gated-community.jpg",
+    image: "assets/img/projects/ppt-sourced/river-front-gated-community/001.jpg",
     facts: ["Residential gated community"],
     short: "A riverfront gated community of villas set among mature palm cover.",
     lede: "A gated riverfront community planned to work with its palm cover, not clear it.",
     gallery: [
-      "assets/img/projects/river-front-gated-community/01.jpg",
-      "assets/img/projects/river-front-gated-community/02.jpg",
-      "assets/img/projects/river-front-gated-community/03.jpg",
-      "assets/img/projects/river-front-gated-community/04.jpg",
-      "assets/img/projects/river-front-gated-community/05.jpg"
+      "assets/img/projects/ppt-sourced/river-front-gated-community/002.jpg",
+      "assets/img/projects/ppt-sourced/river-front-gated-community/003.jpg",
+      "assets/img/projects/ppt-sourced/river-front-gated-community/004.jpg",
+      "assets/img/projects/ppt-sourced/river-front-gated-community/005.jpg",
     ],
     copy: [
       "Villa plots and access roads were laid out around the site's existing trees rather than a cleared grid, so the community reads as built into an established landscape rather than added onto a blank one."
@@ -855,18 +912,23 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/namtech-proposed-campus.jpg",
+    image: "assets/img/projects/ppt-sourced/namtech-proposed-campus/001.jpg",
     facts: ["6,30,000 smt, 150 acre", "Client: Arcelor Mittal Nippon Steel"],
     short: "Concept campus planning for a 150-acre skills university near Ahmedabad.",
     lede: "A 150-acre concept masterplan for a skills university built around industry training.",
     gallery: [
-      "assets/img/projects/namtech-proposed-campus/01.jpg",
-      "assets/img/projects/namtech-proposed-campus/02.jpg",
-      "assets/img/projects/namtech-proposed-campus/03.jpg",
-      "assets/img/projects/namtech-proposed-campus/04.jpg",
-      "assets/img/projects/namtech-proposed-campus/05.jpg",
-      "assets/img/projects/namtech-proposed-campus/06.jpg",
-      "assets/img/projects/namtech-proposed-campus/07.jpg"
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/002.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/003.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/004.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/005.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/006.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/007.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/008.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/009.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/010.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/011.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/012.jpg",
+      "assets/img/projects/ppt-sourced/namtech-proposed-campus/013.jpg",
     ],
     copy: [
       "The masterplan organises teaching blocks, workshops, hostels and shared campus green space at a scale closer to a small town than a single institution, with industry-facing training halls given equal weight to classrooms."
@@ -885,16 +947,15 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/cavalosim-resort.jpg",
+    image: "assets/img/projects/ppt-sourced/cavalosim-resort/001.jpg",
     facts: ["30,000 sft, 2.5 acre", "Architectural master plan"],
     short: "A luxury resort master plan for a 2.5-acre site at Cavelossim.",
     lede: "A 2.5-acre luxury resort, worked out first as a master plan.",
     gallery: [
-      "assets/img/projects/cavalosim-resort/01.jpg",
-      "assets/img/projects/cavalosim-resort/02.jpg"
+      "assets/img/projects/ppt-sourced/cavalosim-resort/002.jpg",
     ],
     copy: [
-      "At master-plan stage, the work sets out how guest blocks, pool and beach access sit together on a tight 2.5-acre site — the framework the resort's later architecture and interiors will build on."
+      "At master-plan stage, the work sets out how guest blocks, pool and beach access sit together on a tight 2.5-acre site â€” the framework the resort's later architecture and interiors will build on."
     ]
   },
   {
@@ -910,12 +971,13 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/machaan-aamby-valley.jpg",
+    image: "assets/img/projects/ppt-sourced/machaan-aamby-valley/001.jpg",
     facts: ["Part of the Timber Resort, Aamby Valley (2,00,000 sft, 50 acre)", "Client: Sahara India"],
     short: "An elevated timber machaan tucked into the tree line at Aamby Valley.",
     lede: "A raised timber machaan, built as one of several small structures across the resort's 50 acres.",
     gallery: [
-      "assets/img/projects/machaan-aamby-valley/02.jpg"
+      "assets/img/projects/ppt-sourced/machaan-aamby-valley/002.jpg",
+      "assets/img/projects/ppt-sourced/machaan-aamby-valley/003.jpg",
     ],
     copy: [
       "Lifted clear of the forest floor on a timber frame, the machaan gives guests a platform among the tree canopy rather than a room looking out at it."
@@ -934,13 +996,15 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/a-frame-aamby-valley.jpg",
+    image: "assets/img/projects/ppt-sourced/a-frame-aamby-valley/001.jpg",
     facts: ["Part of the Timber Resort, Aamby Valley (2,00,000 sft, 50 acre)", "Client: Sahara India"],
     short: "A steep-roofed A-frame cabin, one of the resort's smaller timber typologies.",
     lede: "A compact A-frame cabin built as a model unit for the Aamby Valley timber resort.",
     gallery: [
-      "assets/img/projects/a-frame-aamby-valley/02.jpg",
-      "assets/img/projects/a-frame-aamby-valley/03.jpg"
+      "assets/img/projects/ppt-sourced/a-frame-aamby-valley/002.jpg",
+      "assets/img/projects/ppt-sourced/a-frame-aamby-valley/003.jpg",
+      "assets/img/projects/ppt-sourced/a-frame-aamby-valley/004.jpg",
+      "assets/img/projects/ppt-sourced/a-frame-aamby-valley/005.jpg",
     ],
     copy: [
       "The steep A-frame roof sheds the hill station's heavy monsoon rain while keeping the cabin's footprint, and its material palette, close to the forest around it."
@@ -959,16 +1023,16 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/burmese-chalet-aamby-valley.jpg",
+    image: "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/001.jpg",
     facts: ["Part of the Timber Resort, Aamby Valley (2,00,000 sft, 50 acre)", "Client: Sahara India"],
     short: "A timber chalet built in the Burmese hill tradition, set within the Aamby Valley resort.",
     lede: "A chalet that borrows its construction logic from Burmese hill architecture.",
     gallery: [
-      "assets/img/projects/burmese-chalet-aamby-valley/02.jpg",
-      "assets/img/projects/burmese-chalet-aamby-valley/03.jpg",
-      "assets/img/projects/burmese-chalet-aamby-valley/04.jpg",
-      "assets/img/projects/burmese-chalet-aamby-valley/05.jpg",
-      "assets/img/projects/burmese-chalet-aamby-valley/06.jpg"
+      "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/002.jpg",
+      "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/003.jpg",
+      "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/004.jpg",
+      "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/005.jpg",
+      "assets/img/projects/ppt-sourced/burmese-chalet-aamby-valley/006.jpg",
     ],
     copy: [
       "Stilted timber construction and deep, overhanging eaves place the chalet within a wider hill-building tradition, adapted here to the Sahyadri climate and site."
@@ -987,27 +1051,31 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/hermitage-chalets-aamby-valley/03.jpg",
+    image: "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/001.jpg",
     facts: ["Part of the Timber Resort, Aamby Valley (2,00,000 sft, 50 acre)", "Client: Sahara India"],
     short: "A cluster of stone-and-timber hermitage chalets stepped into the Aamby Valley hillside.",
     lede: "A group of hermitage chalets, each a stone-based, timber-topped retreat against the hills.",
     gallery: [
-      "assets/img/projects/hermitage-chalets-aamby-valley/02.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/04.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/05.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/06.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/07.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/08.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/09.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/10.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/11.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/12.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/13.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/14.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/15.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/16.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/17.jpg",
-      "assets/img/projects/hermitage-chalets-aamby-valley/18.jpg"
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/002.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/003.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/004.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/005.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/006.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/007.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/008.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/009.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/010.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/011.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/012.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/013.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/014.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/015.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/016.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/017.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/018.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/019.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/020.jpg",
+      "assets/img/projects/ppt-sourced/hermitage-chalets-aamby-valley/021.jpg",
     ],
     copy: [
       "A rubble-stone base anchors each chalet into the slope, with a timber upper storey and deep wraparound balconies opening the rooms to the valley view beyond."
@@ -1026,16 +1094,16 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/bridges-pga-aamby-valley.jpg",
+    image: "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/001.jpg",
     facts: ["18-hole championship golf course", "Client: Sahara India / PGA"],
     short: "Timber bridges and cart paths built across the 18-hole PGA course at Aamby Valley.",
     lede: "The bridges and crossings that let an 18-hole championship course read as one continuous landscape.",
     gallery: [
-      "assets/img/projects/bridges-pga-aamby-valley/02.jpg",
-      "assets/img/projects/bridges-pga-aamby-valley/03.jpg",
-      "assets/img/projects/bridges-pga-aamby-valley/04.jpg",
-      "assets/img/projects/bridges-pga-aamby-valley/05.jpg",
-      "assets/img/projects/bridges-pga-aamby-valley/06.jpg"
+      "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/002.jpg",
+      "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/003.jpg",
+      "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/004.jpg",
+      "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/005.jpg",
+      "assets/img/projects/ppt-sourced/bridges-pga-aamby-valley/006.jpg",
     ],
     copy: [
       "Timber bridges, culverts and cart paths were designed together as a single infrastructure layer, built to stay visually quiet against the course's fairways and water bodies."
@@ -1054,20 +1122,20 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/bridges-bulkhead-garry-player-dlf.jpg",
+    image: "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/001.jpg",
     facts: ["27-hole golf course", "Client: DLF Ltd"],
     short: "Timber bridges and bulkheads built along DLF's 27-hole Garry Player golf course.",
     lede: "Bridges and bulkheads detailed to hold a 27-hole course's edges against water and traffic.",
     gallery: [
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/02.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/03.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/04.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/05.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/06.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/07.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/08.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/09.jpg",
-      "assets/img/projects/bridges-bulkhead-garry-player-dlf/10.jpg"
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/002.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/003.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/004.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/005.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/006.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/007.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/008.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/009.jpg",
+      "assets/img/projects/ppt-sourced/bridges-bulkhead-garry-player-dlf/010.jpg",
     ],
     copy: [
       "Bulkheads retain the course's water bodies and banks while timber bridges carry golfers and maintenance vehicles across them, both designed to read as part of the landscape rather than infrastructure laid over it."
@@ -1086,12 +1154,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/starter-hut-garry-player-dlf.jpg",
+    image: "assets/img/projects/ppt-sourced/starter-hut-garry-player-dlf/001.jpg",
     facts: ["27-hole golf course", "Client: DLF Ltd"],
     short: "A small timber starter hut marking the first tee of DLF's Garry Player course.",
     lede: "A starter hut built as a small, deliberate marker at the start of the round.",
     gallery: [
-      "assets/img/projects/starter-hut-garry-player-dlf/02.jpg"
+      "assets/img/projects/ppt-sourced/starter-hut-garry-player-dlf/002.jpg",
     ],
     copy: [
       "Scaled down to a single, simple timber structure, the starter hut announces the first tee without competing with the clubhouse or the course itself."
@@ -1110,22 +1178,21 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/singhvi-residence-neetibagh.jpg",
+    image: "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/001.jpg",
     facts: ["12,500 sft, 800 sqm"],
     short: "A 12,500 sft family residence in Neetibagh, New Delhi.",
     lede: "A 12,500 sft house built around a sequence of top-lit, timber-detailed interior spaces.",
     gallery: [
-      "assets/img/projects/singhvi-residence-neetibagh/02.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/03.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/04.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/05.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/06.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/07.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/08.jpg",
-      "assets/img/projects/singhvi-residence-neetibagh/09.jpg"
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/002.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/003.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/004.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/005.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/006.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/007.jpg",
+      "assets/img/projects/ppt-sourced/singhvi-residence-neetibagh/008.jpg",
     ],
     copy: [
-      "Skylights and a central stair well bring daylight deep into the plan, while timber joinery — door screens, balustrades, panelling — carries a consistent material language through every level of the house."
+      "Skylights and a central stair well bring daylight deep into the plan, while timber joinery â€” door screens, balustrades, panelling â€” carries a consistent material language through every level of the house."
     ]
   },
   {
@@ -1141,14 +1208,16 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/silverglades-farms-tarudhan/03.jpg",
+    image: "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/001.jpg",
     facts: ["7.5 acre", "Residential development", "Client: Silverglades"],
     short: "A 7.5-acre residential farm development adjoining the ITC Classic Golf Course in Manesar.",
     lede: "A 7.5-acre farm residence community planned alongside an existing championship golf course.",
     gallery: [
-      "assets/img/projects/silverglades-farms-tarudhan/02.jpg",
-      "assets/img/projects/silverglades-farms-tarudhan/04.jpg",
-      "assets/img/projects/silverglades-farms-tarudhan/05.jpg"
+      "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/002.jpg",
+      "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/003.jpg",
+      "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/004.jpg",
+      "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/005.jpg",
+      "assets/img/projects/ppt-sourced/silverglades-farms-tarudhan/006.jpg",
     ],
     copy: [
       "Plots and villas are arranged to borrow the adjoining golf course's open green as a shared amenity, rather than building a separate landscape of its own."
@@ -1167,18 +1236,18 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/oliander-farm-karjat.jpg",
+    image: "assets/img/projects/ppt-sourced/oliander-farm-karjat/001.jpg",
     facts: ["22,000 sft, 200 acre", "Boutique resort, Architecture & Interiors", "Client: Mr Ahuja"],
     short: "A 200-acre boutique farm resort outside Karjat, built as a quiet retreat from Mumbai.",
     lede: "A 22,000 sft boutique resort spread across 200 acres of farmland near Karjat.",
     gallery: [
-      "assets/img/projects/oliander-farm-karjat/02.jpg",
-      "assets/img/projects/oliander-farm-karjat/03.jpg",
-      "assets/img/projects/oliander-farm-karjat/04.jpg",
-      "assets/img/projects/oliander-farm-karjat/05.jpg"
+      "assets/img/projects/ppt-sourced/oliander-farm-karjat/002.jpg",
+      "assets/img/projects/ppt-sourced/oliander-farm-karjat/003.jpg",
+      "assets/img/projects/ppt-sourced/oliander-farm-karjat/004.jpg",
+      "assets/img/projects/ppt-sourced/oliander-farm-karjat/005.jpg",
     ],
     copy: [
-      "Guest structures are kept small and scattered across the 200-acre farm, leaving the working landscape — not a resort masterplan — as the dominant experience of the site."
+      "Guest structures are kept small and scattered across the 200-acre farm, leaving the working landscape â€” not a resort masterplan â€” as the dominant experience of the site."
     ]
   },
   {
@@ -1194,13 +1263,17 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/kodak-india-janpath.jpg",
+    image: "assets/img/projects/ppt-sourced/kodak-india-janpath/001.jpg",
     facts: ["2,500 sft", "Corporate office interiors", "Client: KODAK India"],
     short: "A 2,500 sft corporate office interior for Kodak India on Janpath, New Delhi.",
     lede: "A 2,500 sft corporate office fit out for Kodak's New Delhi headquarters.",
     gallery: [
-      "assets/img/projects/kodak-india-janpath/02.jpg",
-      "assets/img/projects/kodak-india-janpath/03.jpg"
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/002.jpg",
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/003.jpg",
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/004.jpg",
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/005.jpg",
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/006.jpg",
+      "assets/img/projects/ppt-sourced/kodak-india-janpath/007.jpg",
     ],
     copy: [
       "Working within an existing Janpath building shell, the interiors were planned to give a global brand's regional office a considered, consistent identity within a tight footprint."
@@ -1219,12 +1292,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/minal-modi-residence.jpg",
+    image: "assets/img/projects/ppt-sourced/minal-modi-residence/001.jpg",
     facts: ["Concept design: Geoffrey Bawa & AB Lall", "Detail drawings: VVA"],
     short: "A concept residence in Mandi Village, with detail drawings developed by the studio.",
     lede: "A residence conceived by Geoffrey Bawa and AB Lall, carried into detail by VVA.",
     gallery: [
-      "assets/img/projects/minal-modi-residence/02.jpg"
+      "assets/img/projects/ppt-sourced/minal-modi-residence/002.jpg",
     ],
     copy: [
       "The studio's role here was to take a concept design originated by Geoffrey Bawa and AB Lall and develop it into construction-ready detail drawings for the Mandi Village site."
@@ -1243,14 +1316,14 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/h-gold-farm-brijwasan.jpg",
+    image: "assets/img/projects/ppt-sourced/h-gold-farm-brijwasan/001.jpg",
     facts: ["Concept design"],
     short: "A concept farmhouse design for a Brijwasan site on Delhi's southern edge.",
     lede: "A farmhouse concept for Brijwasan, planned as a retreat at the edge of the city.",
     gallery: [
-      "assets/img/projects/h-gold-farm-brijwasan/02.jpg",
-      "assets/img/projects/h-gold-farm-brijwasan/03.jpg",
-      "assets/img/projects/h-gold-farm-brijwasan/04.jpg"
+      "assets/img/projects/ppt-sourced/h-gold-farm-brijwasan/002.jpg",
+      "assets/img/projects/ppt-sourced/h-gold-farm-brijwasan/003.jpg",
+      "assets/img/projects/ppt-sourced/h-gold-farm-brijwasan/004.jpg",
     ],
     copy: [
       "Set on the city's rural fringe, the farmhouse concept keeps built form low and gives most of the plot over to open, planted ground."
@@ -1269,12 +1342,12 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/weavers-training-centre-chanderi.jpg",
+    image: "assets/img/projects/ppt-sourced/weavers-training-centre-chanderi/001.jpg",
     facts: ["Concept design", "Institutional / training facility"],
     short: "A concept training centre for Chanderi's handloom weavers.",
     lede: "A training centre concept built around Chanderi's own handloom tradition.",
     gallery: [
-      "assets/img/projects/weavers-training-centre-chanderi/02.jpg"
+      "assets/img/projects/ppt-sourced/weavers-training-centre-chanderi/002.jpg",
     ],
     copy: [
       "The brief called for a centre that could teach and showcase Chanderi's handloom weaving, with workshop, training and display spaces planned as one continuous sequence."
@@ -1293,15 +1366,15 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/wellness-resort-carnoustie-rameshwaram.jpg",
+    image: "assets/img/projects/ppt-sourced/wellness-resort-carnoustie-rameshwaram/001.jpg",
     facts: ["Concept design", "Architecture & Interiors"],
     short: "A concept wellness resort for a coastal site at Rameshwaram.",
     lede: "A wellness resort concept set on Rameshwaram's coastline.",
     gallery: [
-      "assets/img/projects/wellness-resort-carnoustie-rameshwaram/02.jpg",
-      "assets/img/projects/wellness-resort-carnoustie-rameshwaram/03.jpg",
-      "assets/img/projects/wellness-resort-carnoustie-rameshwaram/04.jpg",
-      "assets/img/projects/wellness-resort-carnoustie-rameshwaram/05.jpg"
+      "assets/img/projects/ppt-sourced/wellness-resort-carnoustie-rameshwaram/002.jpg",
+      "assets/img/projects/ppt-sourced/wellness-resort-carnoustie-rameshwaram/003.jpg",
+      "assets/img/projects/ppt-sourced/wellness-resort-carnoustie-rameshwaram/004.jpg",
+      "assets/img/projects/ppt-sourced/wellness-resort-carnoustie-rameshwaram/005.jpg",
     ],
     copy: [
       "Guest and treatment pavilions are planned to open toward the coast, with the resort's wellness programme built around Rameshwaram's sea air and light rather than imported spa conventions."
@@ -1320,13 +1393,13 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/villa-a-flower-valley-central-park.jpg",
+    image: "assets/img/projects/ppt-sourced/villa-a-flower-valley-central-park/001.jpg",
     facts: ["Concept design", "Model villa"],
     short: "A concept villa for the Flower Valley enclave at Central Park, Sona Road.",
     lede: "A villa concept for one plot within the Flower Valley development.",
     gallery: [
-      "assets/img/projects/villa-a-flower-valley-central-park/02.jpg",
-      "assets/img/projects/villa-a-flower-valley-central-park/03.jpg"
+      "assets/img/projects/ppt-sourced/villa-a-flower-valley-central-park/002.jpg",
+      "assets/img/projects/ppt-sourced/villa-a-flower-valley-central-park/003.jpg",
     ],
     copy: [
       "Designed as a model villa for the Flower Valley enclave, the concept sets out a plan and elevation language that could be repeated across similar plots in the development."
@@ -1345,18 +1418,18 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/cottage-anandam-kotabagh.jpg",
+    image: "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/001.jpg",
     facts: ["14,000 sft, 5 acre"],
     short: "A 14,000 sft hillside cottage concept on a 5-acre Kotabagh site.",
     lede: "A cottage retreat concept for a 5-acre site in Kotabagh, Uttarakhand.",
     gallery: [
-      "assets/img/projects/cottage-anandam-kotabagh/02.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/03.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/04.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/05.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/06.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/07.jpg",
-      "assets/img/projects/cottage-anandam-kotabagh/08.jpg"
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/002.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/003.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/004.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/005.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/006.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/007.jpg",
+      "assets/img/projects/ppt-sourced/cottage-anandam-kotabagh/008.jpg",
     ],
     copy: [
       "Like the studio's other hill cottages, the Anandam concept steps down its 5-acre site in smaller volumes rather than one large block, keeping the building close to the land's natural grade."
@@ -1375,17 +1448,18 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/conservatory-dlf/03.jpg",
+    image: "assets/img/projects/ppt-sourced/conservatory-dlf/001.jpg",
     facts: ["Concept design", "Interiors"],
     short: "An interior concept for a conservatory space, developed in multiple view studies.",
     lede: "A conservatory interior worked through a series of concept views.",
     gallery: [
-      "assets/img/projects/conservatory-dlf/02.jpg",
-      "assets/img/projects/conservatory-dlf/04.jpg",
-      "assets/img/projects/conservatory-dlf/05.jpg",
-      "assets/img/projects/conservatory-dlf/06.jpg",
-      "assets/img/projects/conservatory-dlf/07.jpg",
-      "assets/img/projects/conservatory-dlf/08.jpg"
+      "assets/img/projects/ppt-sourced/conservatory-dlf/002.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/003.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/004.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/005.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/006.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/007.jpg",
+      "assets/img/projects/ppt-sourced/conservatory-dlf/008.jpg",
     ],
     copy: [
       "The conservatory concept was developed across multiple interior views, testing light, planting and material before committing to a final direction."
@@ -1404,15 +1478,16 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/panchsheel-park-club-pool/04.jpg",
+    image: "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/001.jpg",
     facts: ["Concept design", "Panchsheel Park Society Club"],
     short: "A concept pool and clubhouse design for Panchsheel Park Society Club.",
     lede: "A pool and club concept for the Panchsheel Park community.",
     gallery: [
-      "assets/img/projects/panchsheel-park-club-pool/02.jpg",
-      "assets/img/projects/panchsheel-park-club-pool/03.jpg",
-      "assets/img/projects/panchsheel-park-club-pool/05.jpg",
-      "assets/img/projects/panchsheel-park-club-pool/06.jpg"
+      "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/002.jpg",
+      "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/003.jpg",
+      "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/004.jpg",
+      "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/005.jpg",
+      "assets/img/projects/ppt-sourced/panchsheel-park-club-pool/006.jpg",
     ],
     copy: [
       "The concept reworks the society club's pool deck and surrounding clubhouse spaces as a single, considered amenity for residents rather than a utilitarian pool enclosure."
@@ -1431,12 +1506,12 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/integrated-golf-haridwar.jpg",
+    image: "assets/img/projects/ppt-sourced/integrated-golf-haridwar/001.jpg",
     facts: ["Concept master plan", "Golf-led development"],
     short: "A concept master plan for an integrated golf development in Haridwar.",
     lede: "A golf-led development concept planned for a Haridwar site.",
     gallery: [
-      "assets/img/projects/integrated-golf-haridwar/02.jpg"
+      "assets/img/projects/ppt-sourced/integrated-golf-haridwar/002.jpg",
     ],
     copy: [
       "At concept stage, the plan sets out how a golf course, residences and supporting amenities could share one site in Haridwar without one element crowding out the others."
@@ -1455,20 +1530,23 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/anand-lok-46.jpg",
+    image: "assets/img/projects/ppt-sourced/anand-lok-46/001.jpg",
     facts: ["Concept design"],
     short: "A concept residence design for a plot at 46 Anand Lok, New Delhi.",
     lede: "A private residence concept for 46 Anand Lok.",
     gallery: [
-      "assets/img/projects/anand-lok-46/02.jpg",
-      "assets/img/projects/anand-lok-46/03.jpg",
-      "assets/img/projects/anand-lok-46/04.jpg",
-      "assets/img/projects/anand-lok-46/05.jpg",
-      "assets/img/projects/anand-lok-46/06.jpg",
-      "assets/img/projects/anand-lok-46/07.jpg",
-      "assets/img/projects/anand-lok-46/08.jpg",
-      "assets/img/projects/anand-lok-46/09.jpg",
-      "assets/img/projects/anand-lok-46/10.jpg"
+      "assets/img/projects/ppt-sourced/anand-lok-46/002.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/003.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/004.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/005.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/006.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/007.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/008.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/009.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/010.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/011.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/012.jpg",
+      "assets/img/projects/ppt-sourced/anand-lok-46/013.jpg",
     ],
     copy: [
       "The concept works through the plan, elevations and material palette for a private residence on a defined South Delhi plot."
@@ -1487,16 +1565,18 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/vasant-kunj-farm/03.jpg",
+    image: "assets/img/projects/ppt-sourced/vasant-kunj-farm/001.jpg",
     facts: ["Concept design"],
     short: "A concept farmhouse design for a Vasant Kunj site.",
     lede: "A farmhouse concept for a Vasant Kunj plot on Delhi's southern edge.",
     gallery: [
-      "assets/img/projects/vasant-kunj-farm/02.jpg",
-      "assets/img/projects/vasant-kunj-farm/04.jpg",
-      "assets/img/projects/vasant-kunj-farm/05.jpg",
-      "assets/img/projects/vasant-kunj-farm/06.jpg",
-      "assets/img/projects/vasant-kunj-farm/07.jpg"
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/002.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/003.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/004.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/005.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/006.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/007.jpg",
+      "assets/img/projects/ppt-sourced/vasant-kunj-farm/008.jpg",
     ],
     copy: [
       "The concept sets out a farmhouse plan built around courtyards and garden rooms, in keeping with the studio's approach to low-density farm residences around Delhi."
@@ -1515,14 +1595,15 @@ var projects = [
       designBuild: false,
       masterPlan: true
     },
-    image: "assets/img/projects/ashtang-yog-ashram-syaat/03.jpg",
+    image: "assets/img/projects/ppt-sourced/ashtang-yog-ashram-syaat/001.jpg",
     facts: ["Concept design", "Client: SYAAT"],
     short: "A concept design for the Ashtang Yog Ashram developed for SYAAT.",
     lede: "An ashram concept developed for the SYAAT trust.",
     gallery: [
-      "assets/img/projects/ashtang-yog-ashram-syaat/02.jpg",
-      "assets/img/projects/ashtang-yog-ashram-syaat/04.jpg",
-      "assets/img/projects/ashtang-yog-ashram-syaat/05.jpg"
+      "assets/img/projects/ppt-sourced/ashtang-yog-ashram-syaat/002.jpg",
+      "assets/img/projects/ppt-sourced/ashtang-yog-ashram-syaat/003.jpg",
+      "assets/img/projects/ppt-sourced/ashtang-yog-ashram-syaat/004.jpg",
+      "assets/img/projects/ppt-sourced/ashtang-yog-ashram-syaat/005.jpg",
     ],
     copy: [
       "The concept lays out the ashram's teaching halls, residential quarters and shared spaces as a single, calm campus suited to daily practice."
@@ -1555,7 +1636,7 @@ var projects = [
       "assets/img/projects/meditation-centre-maunam/08.jpg"
     ],
     copy: [
-      "Maunam — literally, silence — gives the ashram a dedicated space for meditation, developed through plan, elevation and interior view studies as part of the wider ashram concept."
+      "Maunam â€” literally, silence â€” gives the ashram a dedicated space for meditation, developed through plan, elevation and interior view studies as part of the wider ashram concept."
     ]
   },
   {
@@ -1571,18 +1652,26 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/eternesse-wellness-clinic-hyderabad.jpg",
+    image: "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/001.jpg",
     facts: ["Concept design", "Interiors"],
     short: "A concept interior for a regenerative wellness clinic in Jubilee Hills, Hyderabad.",
     lede: "A regenerative wellness clinic concept for Hyderabad's Jubilee Hills.",
     gallery: [
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/02.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/03.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/04.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/05.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/06.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/07.jpg",
-      "assets/img/projects/eternesse-wellness-clinic-hyderabad/08.jpg"
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/002.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/003.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/004.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/005.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/006.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/007.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/008.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/009.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/010.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/011.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/012.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/013.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/014.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/015.jpg",
+      "assets/img/projects/ppt-sourced/eternesse-wellness-clinic-hyderabad/016.jpg",
     ],
     copy: [
       "The concept interiors were developed as a sequence of calm, clinical-adjacent spaces for Eternesse's regenerative wellness programme, worked out across multiple interior views."
@@ -1601,21 +1690,22 @@ var projects = [
       designBuild: false,
       masterPlan: false
     },
-    image: "assets/img/projects/leroy-residence-ghatkesar.jpg",
+    image: "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/001.jpg",
     facts: ["Concept design"],
     short: "A concept residence design for a Ghatkesar site outside Hyderabad.",
     lede: "A private residence concept for a Ghatkesar plot.",
     gallery: [
-      "assets/img/projects/leroy-residence-ghatkesar/02.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/03.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/04.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/05.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/06.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/07.jpg",
-      "assets/img/projects/leroy-residence-ghatkesar/08.jpg"
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/002.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/003.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/004.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/005.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/006.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/007.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/008.jpg",
+      "assets/img/projects/ppt-sourced/leroy-residence-ghatkesar/009.jpg",
     ],
     copy: [
-      "The concept develops a full residence — plan, elevations and material palette — for a family site at Ghatkesar, on Hyderabad's eastern edge."
+      "The concept develops a full residence â€” plan, elevations and material palette â€” for a family site at Ghatkesar, on Hyderabad's eastern edge."
     ]
   }
 ];
@@ -1657,14 +1747,41 @@ var projects = [
 
   var PROJECT_GROUPS = [
     { id: "residential", label: "Residential", matches: function (p) { return p.category === "residential"; } },
-    { id: "architecture", label: "Architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
-    { id: "master-planning", label: "Master Planning", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
     { id: "hospitality", label: "Hospitality", matches: function (p) { return p.category === "hospitality"; } },
     { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } },
-    { id: "landscape", label: "Landscape", matches: function (p) { return !!(p.services && p.services.landscape); } },
-    { id: "interior-design", label: "Interior Design", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
-    { id: "design-build", label: "Design Build", matches: function (p) { return !!(p.services && p.services.designBuild); } }
+    { id: "architecture", label: "Architecture", service: "architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
+    { id: "interior-design", label: "Interior Design", service: "interiorDesign", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
+    { id: "master-planning", label: "Master Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
+    { id: "landscape", label: "Landscape", service: "landscape", matches: function (p) { return !!(p.services && p.services.landscape); } }
   ];
+  // Image numbers refer to each project's cover image followed by its gallery order.
+  var DISCIPLINE_PHOTO_INDICES = {
+    "my-eye-hospital": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], interiorDesign: [19, 20, 21, 22, 23, 24, 25, 26, 27] },
+    "golf-academy-aamby": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 40], interiorDesign: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39] },
+    "delphi-resort": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], interiorDesign: [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
+    "lv-stitching-unit": { architecture: [1], landscape: [1], interiorDesign: [] },
+    "five-element-spa-resort": { architecture: [4, 5, 6, 7, 8, 9, 10, 11, 12], landscape: [1, 2, 3, 7, 8, 9, 10, 11, 12], interiorDesign: [] },
+    "tmtc-pune": { architecture: [1], masterPlan: [1] },
+    "spa-beach-resort-goa": { architecture: [3, 8, 10, 11, 12, 13], landscape: [2, 4, 5, 6, 7, 8, 9], interiorDesign: [] },
+    "wellness-retreat-alwar": { architecture: [4, 5, 6, 7, 8, 12, 13, 14], interiorDesign: [], masterPlan: [1, 2, 3] },
+    "kailasa-coonoor": { architecture: [4, 5, 6, 7, 8, 9, 10, 11], landscape: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11], masterPlan: [1, 2, 3] },
+    "golf-apartments-aamby": { architecture: [8, 9, 10, 11], masterPlan: [1, 2, 3, 4, 5, 6, 7] },
+    "golf-course-masterplans": { landscape: [1, 2], masterPlan: [1, 2] },
+    "eco-resort-stok-ladakh": { architecture: [1, 2, 3, 4, 5], landscape: [1, 2, 3, 4], interiorDesign: [] },
+    "pandit-ji-residence": { architecture: [1], interiorDesign: [] },
+    "river-front-gated-community": { architecture: [3, 4, 5], landscape: [1, 2], masterPlan: [1, 2] },
+    "namtech-proposed-campus": { architecture: [4, 5, 6, 7], masterPlan: [1, 2, 3] },
+    "cavalosim-resort": { architecture: [1], masterPlan: [2] },
+    "starter-hut-garry-player-dlf": { architecture: [1, 2], landscape: [1, 2] },
+    "singhvi-residence-neetibagh": { architecture: [], interiorDesign: [1, 2, 3, 4, 5, 6, 7, 8] },
+    "silverglades-farms-tarudhan": { architecture: [1, 3, 4, 5, 6], masterPlan: [2] },
+    "oliander-farm-karjat": { architecture: [1, 2, 3, 4, 5], interiorDesign: [] },
+    "wellness-resort-carnoustie-rameshwaram": { architecture: [1, 2, 3, 4, 5], interiorDesign: [] },
+    "panchsheel-park-club-pool": { architecture: [1, 2, 3, 4, 5, 6], landscape: [1, 2] },
+    "integrated-golf-haridwar": { landscape: [1, 2], masterPlan: [1, 2] },
+    "ashtang-yog-ashram-syaat": { architecture: [3, 4, 5], masterPlan: [1, 2] },
+    "meditation-centre-maunam": { architecture: [1, 2, 3, 4, 5, 6], interiorDesign: [7, 8] }
+  };
   var currentFilter = "all";
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1685,13 +1802,25 @@ var projects = [
     return Object.keys(SERVICE_LABELS).filter(function (key) { return !!p.services[key]; });
   }
 
+  function projectImagesForFilter(p, filterId) {
+    var images = [p.image].concat(p.gallery || []);
+    var group = PROJECT_GROUPS.find(function (item) { return item.id === filterId; });
+    if (!group || !group.service) return images;
+    if (activeServices(p).length === 1) return images;
+
+    var selections = DISCIPLINE_PHOTO_INDICES[p.id];
+    var indices = selections && selections[group.service];
+    if (!Array.isArray(indices)) return [];
+    return indices.map(function (index) { return images[index - 1]; }).filter(Boolean);
+  }
+
   /* ---------- Grid ---------- */
   function renderGrid() {
     var availableGroups = PROJECT_GROUPS.filter(function (group) {
       return projects.some(group.matches);
     });
 
-    filterBar.innerHTML = '<button class="project-filter" type="button" data-filter="all" aria-pressed="true">All</button>' +
+    filterBar.innerHTML = '<button class="project-filter" type="button" data-filter="all" aria-pressed="false">All</button>' +
       availableGroups.map(function (group) {
         return '<button class="project-filter" type="button" data-filter="' + group.id + '" aria-pressed="false">' + group.label + '</button>';
       }).join("");
@@ -1714,7 +1843,9 @@ var projects = [
 
     var visibleProjects = currentFilter === "all"
       ? projects
-      : projects.filter(selectedGroup.matches);
+      : projects.filter(function (p) {
+        return selectedGroup.matches(p) && projectImagesForFilter(p, currentFilter).length > 0;
+      });
 
     filterBar.querySelectorAll(".project-filter").forEach(function (button) {
       var isActive = button.getAttribute("data-filter") === currentFilter;
@@ -1723,9 +1854,10 @@ var projects = [
     });
 
     projectList.innerHTML = visibleProjects.map(function (p) {
+      var cardImage = projectImagesForFilter(p, currentFilter)[0];
       return (
         '<button class="project-card" type="button" data-id="' + p.id + '" aria-label="View ' + p.title + ', ' + p.location + '">' +
-          '<div class="project-media"><img src="' + p.image + '" alt="" loading="lazy"></div>' +
+          '<div class="project-media"><img src="' + cardImage + '" alt="" loading="lazy"></div>' +
           '<span class="project-caption"><span class="project-name">' + p.title + '</span><span class="project-location">' + p.location + '</span></span>' +
         '</button>'
       );
@@ -1777,7 +1909,7 @@ var projects = [
     var src = slides[current];
     var done = function () {
       slideImg.src = src;
-      slideImg.alt = currentTitle + " — photo " + (current + 1) + " of " + slides.length;
+      slideImg.alt = currentTitle + " â€” photo " + (current + 1) + " of " + slides.length;
       slideImg.classList.remove("is-fading");
     };
     setTimeout(done, reduceMotion ? 0 : 150);
@@ -1846,7 +1978,7 @@ var projects = [
     modalTitle.textContent = p.title;
     modalLede.textContent = p.lede;
 
-    var serviceRow = activeServices(p).map(function (key) { return SERVICE_LABELS[key]; }).join(" · ");
+    var serviceRow = activeServices(p).map(function (key) { return SERVICE_LABELS[key]; }).join(" Â· ");
     modalFacts.innerHTML =
       '<div class="fact"><span>Status</span><span>' + statusLabel(p) + '</span></div>' +
       '<div class="fact"><span>Location</span><span>' + p.location + '</span></div>' +
@@ -1854,7 +1986,7 @@ var projects = [
       p.facts.map(function (f) { return '<div class="fact"><span></span><span>' + f + '</span></div>'; }).join("");
     modalCopy.innerHTML = p.copy.map(function (para) { return "<p>" + para + "</p>"; }).join("");
 
-    slides = [p.image].concat(p.gallery || []);
+    slides = projectImagesForFilter(p, currentFilter);
     var single = slides.length < 2;
     slidePrev.hidden = single;
     slideNext.hidden = single;
@@ -1868,7 +2000,7 @@ var projects = [
     hovering = false;
     slideImg.classList.remove("is-fading");
     slideImg.src = slides[0];
-    slideImg.alt = p.title + " — photo 1 of " + slides.length;
+    slideImg.alt = p.title + " â€” photo 1 of " + slides.length;
     current = 0;
     slideCount.textContent = pad(1) + " / " + pad(slides.length);
     preload(1);
