@@ -2029,4 +2029,6 @@ var projects = [
   });
 
   renderGrid();
+  var requestedProject = new URLSearchParams(window.location.search).get("project");
+  if (requestedProject) openProject(requestedProject);
 })();

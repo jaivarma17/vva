@@ -19,6 +19,11 @@ Clicking a project card opens a full-screen case-study overlay.
 
 Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
 
+## Website guide
+The floating "Ask VVA" guide uses locally curated responses and the project data already included on the site. It does not send questions to an AI provider or answer beyond the site's published information. Project links open their gallery directly using `projects.html?project=<project-id>`.
+
+The homepage slideshow image links to the gallery for the currently displayed project. Project entries and their slideshow images are managed in `scripts/projects.js`.
+
 ## Preview
 Run from this folder:
 

@@ -1,12 +1,13 @@
 (function () {
   var hero = document.querySelector(".home-hero-slideshow");
   var image = document.getElementById("home-hero-image");
+  var imageLink = document.getElementById("home-hero-link");
   var previous = document.getElementById("home-hero-prev");
   var next = document.getElementById("home-hero-next");
   var toggle = document.getElementById("home-hero-toggle");
   var count = document.getElementById("home-hero-count");
   var progress = document.getElementById("home-hero-progress-fill");
-  if (!hero || !image || !previous || !next || !toggle || !count || !progress || !window.projects) return;
+  if (!hero || !image || !imageLink || !previous || !next || !toggle || !count || !progress || !window.projects) return;
 
   var slides = projects.filter(function (project) { return project.image; });
   if (!slides.length) return;
@@ -34,7 +35,9 @@
     current = (index + slides.length) % slides.length;
     image.classList.remove("is-visible");
     image.src = slides[current].image;
-    image.alt = slides[current].title;
+    image.alt = "";
+    imageLink.href = "projects.html?project=" + encodeURIComponent(slides[current].id);
+    imageLink.setAttribute("aria-label", "View " + slides[current].title + " project gallery");
     count.textContent = pad(current + 1) + " / " + pad(slides.length);
     preload(current + 1);
     schedule();

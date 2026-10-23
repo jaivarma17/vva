@@ -33,8 +33,6 @@
     ["28.png", "Central Park"],
     ["29.png", "Oliander Farms"],
     ["30.png", "Kodak"],
-    ["31.png", "AFCS"],
-    ["32.png", "Presto Testing Instruments"],
     ["33.png", "NAMTECH"]
   ];
 
