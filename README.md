@@ -8,7 +8,8 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 - `about.html` — studio / philosophy / work method
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
-- `scripts/projects.js` — all project data + full-screen popup behavior
+- `scripts/projects.js` — project data + full-screen popup behavior
+- `scripts/ppt-project-data.js` — project order and photo galleries imported from the six mother decks
 - `assets/img/projects/` — local project images used by the homepage and project gallery
 
 ## Project editing
@@ -17,12 +18,12 @@ Edit the `projects` array in `scripts/projects.js`. Each project has:
 
 Clicking a project card opens a full-screen case-study overlay.
 
-Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
+The order, imported galleries, and homepage hero sequence from the six mother PowerPoints are in `scripts/ppt-project-data.js`; images are extracted from the slides without their overlaid title and logo text. Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
 
 ## Website guide
 The floating "Ask VVA" guide uses locally curated responses and the project data already included on the site. It does not send questions to an AI provider or answer beyond the site's published information. Project links open their gallery directly using `projects.html?project=<project-id>`.
 
-The homepage slideshow image links to the gallery for the currently displayed project. Project entries and their slideshow images are managed in `scripts/projects.js`.
+The homepage slideshow image links to the gallery for the currently displayed project. Its built-project sequence is managed in `scripts/ppt-project-data.js`.
 
 ## Preview
 Run from this folder:

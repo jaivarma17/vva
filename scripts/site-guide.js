@@ -84,8 +84,7 @@
       { id: "commercial", terms: ["commercial", "office", "offices", "hospital", "campus", "institutional"] },
       { id: "architecture", terms: ["architecture", "architect", "architectural"] },
       { id: "interior-design", terms: ["interior", "interiors"] },
-      { id: "master-planning", terms: ["planning", "masterplan", "masterplanning"] },
-      { id: "landscape", terms: ["landscape", "landscaping"] }
+      { id: "planning", terms: ["planning", "masterplan", "masterplanning"] }
     ];
     var requestedGroup = groups.find(function (group) {
       return group.terms.some(function (term) { return words.indexOf(term) !== -1; });

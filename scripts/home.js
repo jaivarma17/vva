@@ -9,7 +9,10 @@
   var progress = document.getElementById("home-hero-progress-fill");
   if (!hero || !image || !imageLink || !previous || !next || !toggle || !count || !progress || !window.projects) return;
 
-  var slides = projects.filter(function (project) { return project.image; });
+  var heroIds = window.pptProjectData && window.pptProjectData.homeHeroIds;
+  var slides = heroIds
+    ? heroIds.map(function (id) { return projects.find(function (project) { return project.id === id; }); }).filter(function (project) { return project && project.image; })
+    : projects.filter(function (project) { return project.image; });
   if (!slides.length) return;
 
   var interval = 5000;

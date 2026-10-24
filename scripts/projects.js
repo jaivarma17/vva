@@ -1710,6 +1710,45 @@ var projects = [
   }
 ];
 
+if (window.pptProjectData) {
+  var pptProjectData = window.pptProjectData;
+  var existingProjectIds = {};
+
+  projects.forEach(function (project) {
+    existingProjectIds[project.id] = true;
+  });
+
+  pptProjectData.additions.forEach(function (project) {
+    if (!existingProjectIds[project.id]) {
+      projects.push(project);
+      existingProjectIds[project.id] = true;
+    }
+  });
+
+  Object.keys(pptProjectData.overrides).forEach(function (id) {
+    var project = projects.find(function (item) { return item.id === id; });
+    var source = pptProjectData.overrides[id];
+    if (!project) return;
+
+    project.image = source.image;
+    project.gallery = source.gallery.slice(1);
+  });
+
+  var projectOrder = {};
+  pptProjectData.order.forEach(function (id, index) {
+    projectOrder[id] = index;
+  });
+  projects.sort(function (a, b) {
+    var aOrder = projectOrder[a.id];
+    var bOrder = projectOrder[b.id];
+    if (aOrder === undefined) return bOrder === undefined ? 0 : 1;
+    if (bOrder === undefined) return -1;
+    return aOrder - bOrder;
+  });
+}
+
+window.projects = projects;
+
 (function () {
   var AUTOPLAY_MS = 3000;
 
@@ -1742,7 +1781,7 @@ var projects = [
     landscape: "Landscape",
     interiorDesign: "Interior Design",
     designBuild: "Design Build",
-    masterPlan: "Master Plan"
+    masterPlan: "Planning"
   };
 
   var PROJECT_GROUPS = [
@@ -1751,8 +1790,7 @@ var projects = [
     { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } },
     { id: "architecture", label: "Architecture", service: "architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
     { id: "interior-design", label: "Interior Design", service: "interiorDesign", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
-    { id: "master-planning", label: "Master Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
-    { id: "landscape", label: "Landscape", service: "landscape", matches: function (p) { return !!(p.services && p.services.landscape); } }
+    { id: "planning", label: "Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } }
   ];
   // Image numbers refer to each project's cover image followed by its gallery order.
   var DISCIPLINE_PHOTO_INDICES = {
@@ -1810,7 +1848,7 @@ var projects = [
 
     var selections = DISCIPLINE_PHOTO_INDICES[p.id];
     var indices = selections && selections[group.service];
-    if (!Array.isArray(indices)) return [];
+    if (!Array.isArray(indices)) return images;
     return indices.map(function (index) { return images[index - 1]; }).filter(Boolean);
   }
 
