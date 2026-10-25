@@ -1712,6 +1712,15 @@ var projects = [
 
 if (window.pptProjectData) {
   var pptProjectData = window.pptProjectData;
+  var excludedPptImages = {
+    "assets/img/projects/ppt-decks/a-frame-aamby-valley/002.jpg": true,
+    "assets/img/projects/ppt-decks/cottage-shamrock/012.jpg": true,
+    "assets/img/projects/ppt-decks/delphi-resort/005.jpg": true,
+    "assets/img/projects/ppt-decks/desai-residence/001.jpg": true,
+    "assets/img/projects/ppt-decks/five-element-spa-resort/003.jpg": true,
+    "assets/img/projects/ppt-decks/hermitage-chalets-aamby-valley/012.jpg": true,
+    "assets/img/projects/ppt-decks/leroy-residence-ghatkesar/002.jpg": true
+  };
   var existingProjectIds = {};
 
   projects.forEach(function (project) {
@@ -1730,8 +1739,13 @@ if (window.pptProjectData) {
     var source = pptProjectData.overrides[id];
     if (!project) return;
 
-    project.image = source.image;
-    project.gallery = source.gallery.slice(1);
+    var availableImages = source.gallery.filter(function (imagePath) {
+      return !excludedPptImages[imagePath];
+    });
+    project.image = excludedPptImages[source.image] ? availableImages[0] : source.image;
+    project.gallery = availableImages.filter(function (imagePath) {
+      return imagePath !== project.image;
+    });
   });
 
   var projectOrder = {};
@@ -1956,7 +1970,7 @@ window.projects = projects;
       slideImg.alt = currentTitle + " â€” photo " + (current + 1) + " of " + slides.length;
       if (slideImg.complete && slideImg.naturalWidth) slideImg.classList.remove("is-fading");
     };
-    setTimeout(done, reduceMotion ? 0 : 350);
+    setTimeout(done, reduceMotion ? 0 : 800);
     slideCount.textContent = pad(current + 1) + " / " + pad(slides.length);
     preload(current + 1);
     schedule();
