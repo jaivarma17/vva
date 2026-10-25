@@ -18,7 +18,9 @@
   var interval = 5000;
   var current = 0;
   var timer = null;
-  var playing = !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var transitionId = 0;
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var playing = !reduceMotion;
 
   function pad(number) { return number < 10 ? "0" + number : String(number); }
 
@@ -36,16 +38,30 @@
 
   function show(index) {
     current = (index + slides.length) % slides.length;
+    var currentTransition = ++transitionId;
+    var shouldFadeOut = image.classList.contains("is-visible") && !reduceMotion;
     image.classList.remove("is-visible");
-    image.src = slides[current].image;
-    image.alt = "";
     imageLink.href = "projects.html?project=" + encodeURIComponent(slides[current].id);
     imageLink.setAttribute("aria-label", "View " + slides[current].title + " project gallery");
     count.textContent = pad(current + 1) + " / " + pad(slides.length);
     preload(current + 1);
     schedule();
-    image.onload = function () { image.classList.add("is-visible"); };
-    if (image.complete && image.naturalWidth) image.classList.add("is-visible");
+
+    function loadCurrentImage() {
+      if (currentTransition !== transitionId) return;
+      image.onload = function () {
+        if (currentTransition === transitionId) image.classList.add("is-visible");
+      };
+      image.src = slides[current].image;
+      image.alt = "";
+      if (image.complete && image.naturalWidth) image.classList.add("is-visible");
+    }
+
+    if (shouldFadeOut) {
+      window.setTimeout(loadCurrentImage, 350);
+    } else {
+      loadCurrentImage();
+    }
   }
 
   function schedule() {

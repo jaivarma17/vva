@@ -1827,6 +1827,7 @@ window.projects = projects;
   var slides = [];
   var current = 0;
   var timer = null;
+  var slideTransition = 0;
   var playing = true;
   var hovering = false;
   var activeTab = "photos";
@@ -1943,14 +1944,19 @@ window.projects = projects;
   function goTo(index, fromTimer) {
     if (!slides.length) return;
     current = (index + slides.length) % slides.length;
+    var currentTransition = ++slideTransition;
     slideImg.classList.add("is-fading");
     var src = slides[current];
     var done = function () {
+      if (currentTransition !== slideTransition) return;
+      slideImg.onload = function () {
+        if (currentTransition === slideTransition) slideImg.classList.remove("is-fading");
+      };
       slideImg.src = src;
       slideImg.alt = currentTitle + " â€” photo " + (current + 1) + " of " + slides.length;
-      slideImg.classList.remove("is-fading");
+      if (slideImg.complete && slideImg.naturalWidth) slideImg.classList.remove("is-fading");
     };
-    setTimeout(done, reduceMotion ? 0 : 150);
+    setTimeout(done, reduceMotion ? 0 : 350);
     slideCount.textContent = pad(current + 1) + " / " + pad(slides.length);
     preload(current + 1);
     schedule();
@@ -2036,6 +2042,7 @@ window.projects = projects;
     modal.scrollTop = 0;
 
     hovering = false;
+    slideTransition += 1;
     slideImg.classList.remove("is-fading");
     slideImg.src = slides[0];
     slideImg.alt = p.title + " â€” photo 1 of " + slides.length;

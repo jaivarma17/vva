@@ -88,7 +88,7 @@ main{min-height:70vh}
 .home-hero{min-height:min(520px,90vh);height:clamp(420px,42vw,620px);position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;color:#fff;background:#242725;overflow:hidden}
 .home-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.08) 42%,rgba(0,0,0,.42))}
 .home-hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden}
-.home-hero-image{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s ease}
+.home-hero-image{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
 .home-hero-image.is-visible{opacity:1}
 .home-hero-progress{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.24)}
 .home-hero-progress span{display:block;width:0;height:100%;background:#fff}
@@ -132,7 +132,7 @@ main{min-height:70vh}
 .modal-panel[hidden]{display:none}
 .slideshow{position:relative;background:#ecece8;overflow:hidden}
 .slide-stage{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
-.slide-stage img{width:100%;height:100%;object-fit:contain;transition:opacity .25s ease}
+.slide-stage img{width:100%;height:100%;object-fit:contain;transition:opacity .35s ease}
 .slide-stage img.is-fading{opacity:0}
 .slide-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--text);font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 3px;box-shadow:0 1px 6px rgba(0,0,0,.18);transition:background .2s}
 .slide-btn:hover{background:#fff}.slide-prev{left:16px}.slide-next{right:16px}
@@ -145,7 +145,7 @@ main{min-height:70vh}
 .slide-toggle:hover{border-color:var(--text)}
 @media(max-width:800px){.modal-tabs{gap:24px}.slide-btn{width:38px;height:38px;font-size:22px}.slide-prev{left:8px}.slide-next{right:8px}}
 @media(prefers-reduced-motion:reduce){.slide-stage img{transition:none}}
-.home-hero-image{transition:opacity .5s ease}
+.home-hero-image{transition:opacity .35s ease}
 @media(prefers-reduced-motion:reduce){.home-hero-image{transition:none}}
 .slide-btn[hidden],.slide-toggle[hidden]{display:none}
 .modal-inner{padding-top:clamp(28px,4vw,56px);padding-bottom:60px}
