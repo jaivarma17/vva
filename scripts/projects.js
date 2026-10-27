@@ -1710,6 +1710,15 @@ var projects = [
   }
 ];
 
+var unavailableProjectImages = {
+  "assets/img/projects/ppt-decks/delphi-resort/005.jpg": true,
+  "assets/img/projects/ppt-decks/desai-residence/001.jpg": true,
+  "assets/img/projects/ppt-decks/river-front-gated-community/002.jpg": true,
+  "assets/img/projects/ppt-sourced/chandras-residence/005.jpg": true,
+  "assets/img/projects/ppt-sourced/desai-residence/001.jpg": true,
+  "assets/img/projects/ppt-sourced/namtech-proposed-campus/009.jpg": true
+};
+
 if (window.pptProjectData) {
   var pptProjectData = window.pptProjectData;
   var excludedPptImages = {
@@ -1719,7 +1728,11 @@ if (window.pptProjectData) {
     "assets/img/projects/ppt-decks/desai-residence/001.jpg": true,
     "assets/img/projects/ppt-decks/five-element-spa-resort/003.jpg": true,
     "assets/img/projects/ppt-decks/hermitage-chalets-aamby-valley/012.jpg": true,
-    "assets/img/projects/ppt-decks/leroy-residence-ghatkesar/002.jpg": true
+    "assets/img/projects/ppt-decks/leroy-residence-ghatkesar/002.jpg": true,
+    "assets/img/projects/ppt-decks/river-front-gated-community/002.jpg": true,
+    "assets/img/projects/ppt-sourced/chandras-residence/005.jpg": true,
+    "assets/img/projects/ppt-sourced/desai-residence/001.jpg": true,
+    "assets/img/projects/ppt-sourced/namtech-proposed-campus/009.jpg": true
   };
   var existingProjectIds = {};
 
@@ -1761,6 +1774,15 @@ if (window.pptProjectData) {
   });
 }
 
+projects.forEach(function (project) {
+  project.gallery = (project.gallery || []).filter(function (imagePath) {
+    return !unavailableProjectImages[imagePath];
+  });
+  if (unavailableProjectImages[project.image]) {
+    project.image = project.gallery.shift() || "";
+  }
+});
+
 window.projects = projects;
 
 (function () {
@@ -1769,9 +1791,51 @@ window.projects = projects;
   var grid = document.getElementById("projects");
   var projectList = document.getElementById("project-card-grid");
   var filterBar = document.getElementById("project-filters");
+  var projectMenuToggle = document.getElementById("project-menu-toggle");
+  var mainHeader = document.querySelector(".site-header");
   var resultCount = document.getElementById("project-result-count");
   var modal = document.getElementById("project-modal");
   if (!grid || !projectList || !filterBar || !resultCount || !modal) return;
+
+  if (projectMenuToggle && mainHeader) {
+    function closeProjectMenu() {
+      document.body.classList.remove("project-menu-open");
+      document.body.style.removeProperty("--project-menu-height");
+      projectMenuToggle.setAttribute("aria-expanded", "false");
+      projectMenuToggle.setAttribute("aria-label", "Open main navigation");
+    }
+
+    mainHeader.id = "project-main-menu";
+    projectMenuToggle.addEventListener("click", function () {
+      var isOpen = document.body.classList.toggle("project-menu-open");
+      if (isOpen) {
+        document.body.style.setProperty("--project-menu-height", mainHeader.offsetHeight + "px");
+      } else {
+        document.body.style.removeProperty("--project-menu-height");
+      }
+      projectMenuToggle.setAttribute("aria-expanded", String(isOpen));
+      projectMenuToggle.setAttribute("aria-label", isOpen ? "Close main navigation" : "Open main navigation");
+    });
+    window.addEventListener("resize", function () {
+      if (document.body.classList.contains("project-menu-open")) {
+        document.body.style.setProperty("--project-menu-height", mainHeader.offsetHeight + "px");
+      }
+    });
+    mainHeader.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeProjectMenu);
+    });
+    document.addEventListener("pointerdown", function (event) {
+      if (!document.body.classList.contains("project-menu-open")) return;
+      if (mainHeader.contains(event.target) || projectMenuToggle.contains(event.target)) return;
+      closeProjectMenu();
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && document.body.classList.contains("project-menu-open")) {
+        closeProjectMenu();
+        projectMenuToggle.focus();
+      }
+    });
+  }
 
   var modalTitle = document.getElementById("modal-title");
   var modalLede = document.getElementById("modal-lede");
@@ -1789,6 +1853,13 @@ window.projects = projects;
   var slideCount = document.getElementById("slide-count");
   var slideToggle = document.getElementById("slide-toggle");
   var slideFill = document.getElementById("slide-progress-fill");
+  var slideError = document.getElementById("slide-error");
+  var slidePixelCanvas = document.createElement("canvas");
+  var slidePixelContext = slidePixelCanvas.getContext("2d");
+  var slidePixelFrame = 0;
+  slidePixelCanvas.className = "project-pixel-canvas";
+  slidePixelCanvas.setAttribute("aria-hidden", "true");
+  slideshow.appendChild(slidePixelCanvas);
 
   var SERVICE_LABELS = {
     architecture: "Architecture",
@@ -1835,6 +1906,8 @@ window.projects = projects;
     "meditation-centre-maunam": { architecture: [1, 2, 3, 4, 5, 6], interiorDesign: [7, 8] }
   };
   var currentFilter = "all";
+  var failedProjectImages = Object.create(null);
+  var slideImageCache = Object.create(null);
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1842,6 +1915,8 @@ window.projects = projects;
   var current = 0;
   var timer = null;
   var slideTransition = 0;
+  var slideLoadTimer = null;
+  var slideIsLoading = false;
   var playing = true;
   var hovering = false;
   var activeTab = "photos";
@@ -1856,7 +1931,9 @@ window.projects = projects;
   }
 
   function projectImagesForFilter(p, filterId) {
-    var images = [p.image].concat(p.gallery || []);
+    var images = [p.image].concat(p.gallery || []).filter(function (imagePath) {
+      return imagePath && !unavailableProjectImages[imagePath] && !failedProjectImages[imagePath];
+    });
     var group = PROJECT_GROUPS.find(function (item) { return item.id === filterId; });
     if (!group || !group.service) return images;
     if (activeServices(p).length === 1) return images;
@@ -1941,39 +2018,216 @@ window.projects = projects;
 
   function schedule() {
     clearTimer();
-    restartProgress();
-    if (!playing || hovering || slides.length < 2 || activeTab !== "photos" || !modal.classList.contains("is-open")) {
+    if (!playing || hovering || slideIsLoading || slides.length < 2 || activeTab !== "photos" || !modal.classList.contains("is-open")) {
       slideFill.classList.remove("is-running");
       return;
     }
-    timer = setTimeout(function () { goTo(current + 1, true); }, AUTOPLAY_MS);
+    restartProgress();
+    timer = setTimeout(function () { goTo(current + 1); }, AUTOPLAY_MS);
   }
 
   function preload(i) {
-    if (!slides.length) return;
-    var img = new Image();
-    img.src = slides[(i + slides.length) % slides.length];
+    if (!slides.length) return null;
+    var src = slides[(i + slides.length) % slides.length];
+    if (!slideImageCache[src]) {
+      slideImageCache[src] = new Image();
+      slideImageCache[src].decoding = "async";
+      slideImageCache[src].src = src;
+    }
+    return slideImageCache[src];
   }
 
-  function goTo(index, fromTimer) {
-    if (!slides.length) return;
-    current = (index + slides.length) % slides.length;
-    var currentTransition = ++slideTransition;
-    slideImg.classList.add("is-fading");
-    var src = slides[current];
-    var done = function () {
+  function drawSlidePixelated(source, blockSize) {
+    var bounds = slideshow.getBoundingClientRect();
+    var width = Math.max(1, Math.ceil(bounds.width / blockSize));
+    var height = Math.max(1, Math.ceil(bounds.height / blockSize));
+    if (slidePixelCanvas.width !== width || slidePixelCanvas.height !== height) {
+      slidePixelCanvas.width = width;
+      slidePixelCanvas.height = height;
+    }
+
+    var sourceWidth = source.naturalWidth || source.width;
+    var sourceHeight = source.naturalHeight || source.height;
+    var sourceRatio = sourceWidth / sourceHeight;
+    var canvasRatio = width / height;
+    var drawWidth = width;
+    var drawHeight = height;
+    var offsetX = 0;
+    var offsetY = 0;
+    if (sourceRatio > canvasRatio) {
+      drawHeight = width / sourceRatio;
+      offsetY = (height - drawHeight) / 2;
+    } else {
+      drawWidth = height * sourceRatio;
+      offsetX = (width - drawWidth) / 2;
+    }
+
+    slidePixelContext.imageSmoothingEnabled = false;
+    slidePixelContext.clearRect(0, 0, width, height);
+    slidePixelContext.drawImage(source, 0, 0, sourceWidth, sourceHeight, offsetX, offsetY, drawWidth, drawHeight);
+  }
+
+  function cancelSlidePixelTransition() {
+    if (slidePixelFrame) {
+      window.cancelAnimationFrame(slidePixelFrame);
+      slidePixelFrame = 0;
+    }
+    slidePixelCanvas.style.display = "none";
+    slidePixelCanvas.style.opacity = "0";
+    slideImg.classList.remove("is-pixel-transition");
+    slideImg.style.removeProperty("opacity");
+  }
+
+  function pixelTransitionSlide(nextImage, currentTransition, nextAlt) {
+    var outgoingImage = slideImg;
+    var startedAt = 0;
+    var swapped = false;
+    var duration = 1800;
+    var halfDuration = duration / 2;
+    slideImg.classList.add("is-pixel-transition");
+    slideImg.style.opacity = "1";
+    slidePixelCanvas.style.display = "block";
+    slidePixelCanvas.style.opacity = "0";
+
+    function animate(timestamp) {
       if (currentTransition !== slideTransition) return;
-      slideImg.onload = function () {
-        if (currentTransition === slideTransition) slideImg.classList.remove("is-fading");
-      };
-      slideImg.src = src;
-      slideImg.alt = currentTitle + " â€” photo " + (current + 1) + " of " + slides.length;
-      if (slideImg.complete && slideImg.naturalWidth) slideImg.classList.remove("is-fading");
-    };
-    setTimeout(done, reduceMotion ? 0 : 800);
-    slideCount.textContent = pad(current + 1) + " / " + pad(slides.length);
-    preload(current + 1);
-    schedule();
+      if (!startedAt) startedAt = timestamp;
+      var elapsed = Math.min(timestamp - startedAt, duration);
+      var progress;
+      var blockSize;
+      var source;
+
+      if (elapsed < halfDuration) {
+        progress = elapsed / halfDuration;
+        blockSize = 1 + Math.floor(progress * 17);
+        source = outgoingImage;
+        slideImg.style.opacity = String(1 - progress);
+        slidePixelCanvas.style.opacity = String(progress);
+      } else {
+        if (!swapped) {
+          slideImg.src = nextImage.src;
+          slideImg.alt = nextAlt;
+          slideImg.style.opacity = "0";
+          swapped = true;
+        }
+        progress = Math.min((elapsed - halfDuration) / halfDuration, 1);
+        blockSize = 18 - Math.floor(progress * 17);
+        source = nextImage;
+        slideImg.style.opacity = String(progress);
+        slidePixelCanvas.style.opacity = String(1 - progress);
+      }
+
+      drawSlidePixelated(source, blockSize);
+      if (elapsed < duration) {
+        slidePixelFrame = window.requestAnimationFrame(animate);
+        return;
+      }
+
+      cancelSlidePixelTransition();
+      slideIsLoading = false;
+      schedule();
+    }
+
+    slidePixelFrame = window.requestAnimationFrame(animate);
+  }
+
+  function goTo(index, skipTransition) {
+    if (!slides.length) {
+      slideImg.removeAttribute("src");
+      slideImg.alt = "";
+      slideError.hidden = false;
+      slideCount.textContent = "0 / 0";
+      slidePrev.hidden = true;
+      slideNext.hidden = true;
+      slideToggle.hidden = true;
+      slideIsLoading = false;
+      return;
+    }
+    cancelSlidePixelTransition();
+    clearTimer();
+    if (slideLoadTimer) {
+      window.clearTimeout(slideLoadTimer);
+      slideLoadTimer = null;
+    }
+    slideFill.classList.remove("is-running");
+    slideIsLoading = true;
+    var currentTransition = ++slideTransition;
+    var attempts = 0;
+    var maxAttempts = slides.length;
+
+    function failImage(src) {
+      if (currentTransition !== slideTransition) return;
+      failedProjectImages[src] = true;
+      slides = slides.filter(function (imagePath) { return imagePath !== src; });
+      attempts += 1;
+      if (!slides.length || attempts >= maxAttempts) {
+        slideIsLoading = false;
+        slideImg.removeAttribute("src");
+        slideImg.alt = "";
+        slideError.hidden = false;
+        slideCount.textContent = "0 / 0";
+        slidePrev.hidden = true;
+        slideNext.hidden = true;
+        slideToggle.hidden = true;
+        schedule();
+        return;
+      }
+      loadCurrent();
+    }
+
+    function loadCurrent() {
+      current = (index + slides.length) % slides.length;
+      var src = slides[current];
+      var nextAlt = currentTitle + " — photo " + (current + 1) + " of " + slides.length;
+      var nextImage = preload(current);
+      var settled = false;
+
+      function clearLoadTimer() {
+        if (slideLoadTimer) {
+          window.clearTimeout(slideLoadTimer);
+          slideLoadTimer = null;
+        }
+      }
+
+      function showLoadedImage() {
+        if (settled || currentTransition !== slideTransition) return;
+        settled = true;
+        clearLoadTimer();
+        slideError.hidden = true;
+        slideCount.textContent = pad(current + 1) + " / " + slides.length;
+        slidePrev.hidden = slides.length < 2;
+        slideNext.hidden = slides.length < 2;
+        slideToggle.hidden = slides.length < 2;
+        preload(current + 1);
+
+        if (skipTransition || reduceMotion || !slideImg.complete || !slideImg.naturalWidth) {
+          slideImg.src = nextImage.src;
+          slideImg.alt = nextAlt;
+          slideIsLoading = false;
+          schedule();
+          return;
+        }
+        pixelTransitionSlide(nextImage, currentTransition, nextAlt);
+      }
+
+      function handleImageError() {
+        if (settled || currentTransition !== slideTransition) return;
+        settled = true;
+        clearLoadTimer();
+        failImage(src);
+      }
+
+      nextImage.addEventListener("load", showLoadedImage, { once: true });
+      nextImage.addEventListener("error", handleImageError, { once: true });
+      if (nextImage.complete) {
+        if (nextImage.naturalWidth) showLoadedImage();
+        else handleImageError();
+      } else {
+        slideLoadTimer = window.setTimeout(handleImageError, 15000);
+      }
+    }
+
+    loadCurrent();
   }
 
   function setPlaying(state) {
@@ -2045,6 +2299,7 @@ window.projects = projects;
     modalCopy.innerHTML = p.copy.map(function (para) { return "<p>" + para + "</p>"; }).join("");
 
     slides = projectImagesForFilter(p, currentFilter);
+    slideError.hidden = true;
     var single = slides.length < 2;
     slidePrev.hidden = single;
     slideNext.hidden = single;
@@ -2056,20 +2311,26 @@ window.projects = projects;
     modal.scrollTop = 0;
 
     hovering = false;
+    cancelSlidePixelTransition();
     slideTransition += 1;
     slideImg.classList.remove("is-fading");
-    slideImg.src = slides[0];
-    slideImg.alt = p.title + " â€” photo 1 of " + slides.length;
     current = 0;
     slideCount.textContent = pad(1) + " / " + pad(slides.length);
-    preload(1);
 
     showTab("photos");
     setPlaying(!reduceMotion);
+    goTo(0, true);
   }
 
   function closeProject() {
     clearTimer();
+    if (slideLoadTimer) {
+      window.clearTimeout(slideLoadTimer);
+      slideLoadTimer = null;
+    }
+    slideIsLoading = false;
+    slideTransition += 1;
+    cancelSlidePixelTransition();
     slideFill.classList.remove("is-running");
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
