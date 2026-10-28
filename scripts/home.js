@@ -9,38 +9,23 @@
   var progress = document.getElementById("home-hero-progress-fill");
   if (!hero || !image || !imageLink || !previous || !next || !toggle || !count || !progress || !window.projects) return;
 
-  var featuredSlides = [
-    ["golf-academy-aamby", "assets/img/projects/ppt-decks/golf-academy-aamby/005.jpg"],
-    ["machaan-aamby-valley", "assets/img/projects/ppt-decks/machaan-aamby-valley/001.jpg"],
-    ["burmese-chalet-aamby-valley", "assets/img/projects/ppt-decks/burmese-chalet-aamby-valley/001.jpg"],
-    ["hermitage-chalets-aamby-valley", "assets/img/projects/ppt-decks/hermitage-chalets-aamby-valley/003.jpg"],
-    ["bridges-pga-aamby-valley", "assets/img/projects/ppt-decks/bridges-pga-aamby-valley/001.jpg"],
-    ["dantal-corporate-office", "assets/img/projects/ppt-decks/dantal-corporate-office/001.jpg"],
-    ["mds-factory-palwal", "assets/img/projects/ppt-decks/mds-factory-palwal/002.jpg"],
-    ["oliander-farm-karjat", "assets/img/projects/ppt-decks/oliander-farm-karjat/002.jpg"],
-    ["my-eye-hospital", "assets/img/projects/ppt-decks/my-eye-hospital/003.jpg"],
-    ["desai-residence", "assets/img/projects/ppt-decks/desai-residence/002.jpg"],
-    ["presto-corporate-office", "assets/img/projects/ppt-decks/presto-corporate-office/001.jpg"],
-    ["all-forge-corporate-factory", "assets/img/projects/ppt-decks/all-forge-corporate-factory/001.jpg"],
-    ["golf-academy-ansals", "assets/img/projects/ppt-decks/golf-academy-ansals/003.jpg"],
-    ["starter-hut-garry-player-dlf", "assets/img/projects/ppt-decks/starter-hut-garry-player-dlf/001.jpg"],
-    ["sahay-residence", "assets/img/projects/ppt-decks/sahay-residence/002.jpg"],
-    ["chandras-residence", "assets/img/projects/ppt-decks/chandras-residence/001.jpg"],
-    ["t-house-pune", "assets/img/projects/ppt-decks/t-house-pune/002.jpg"],
-    ["cottage-shamrock", "assets/img/projects/ppt-decks/cottage-shamrock/007.jpg"],
-    ["singhvi-residence-neetibagh", "assets/img/projects/ppt-decks/singhvi-residence-neetibagh/001.jpg"],
-    ["ritz-restaurant-lucknow", "assets/img/projects/ppt-decks/ritz-restaurant-lucknow/001.jpg"]
-  ];
-  var slides = featuredSlides
-    .map(function (slide) {
-      var project = projects.find(function (item) { return item.id === slide[0]; });
-      return project ? { id: project.id, title: project.title, image: slide[1] } : null;
+  var pptProjectData = window.pptProjectData;
+  var slides = (pptProjectData && pptProjectData.homeHeroIds || [])
+    .map(function (projectId) {
+      var project = projects.find(function (item) { return item.id === projectId; });
+      var source = pptProjectData.overrides[projectId];
+      return project && source && source.image
+        ? { id: project.id, title: project.title, image: source.image }
+        : null;
     })
     .filter(Boolean);
-  if (!slides.length) {
-    slides = projects.filter(function (project) { return project.image; });
-  }
   if (!slides.length) return;
+
+  document.querySelectorAll(".category-grid [data-home-project-image]").forEach(function (link) {
+    var source = pptProjectData.overrides[link.getAttribute("data-home-project-image")];
+    var categoryImage = link.querySelector("img");
+    if (source && source.image && categoryImage) categoryImage.src = source.image;
+  });
 
   var interval = 7000;
   var current = 0;

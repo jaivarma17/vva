@@ -1710,30 +1710,8 @@ var projects = [
   }
 ];
 
-var unavailableProjectImages = {
-  "assets/img/projects/ppt-decks/delphi-resort/005.jpg": true,
-  "assets/img/projects/ppt-decks/desai-residence/001.jpg": true,
-  "assets/img/projects/ppt-decks/river-front-gated-community/002.jpg": true,
-  "assets/img/projects/ppt-sourced/chandras-residence/005.jpg": true,
-  "assets/img/projects/ppt-sourced/desai-residence/001.jpg": true,
-  "assets/img/projects/ppt-sourced/namtech-proposed-campus/009.jpg": true
-};
-
 if (window.pptProjectData) {
   var pptProjectData = window.pptProjectData;
-  var excludedPptImages = {
-    "assets/img/projects/ppt-decks/a-frame-aamby-valley/002.jpg": true,
-    "assets/img/projects/ppt-decks/cottage-shamrock/012.jpg": true,
-    "assets/img/projects/ppt-decks/delphi-resort/005.jpg": true,
-    "assets/img/projects/ppt-decks/desai-residence/001.jpg": true,
-    "assets/img/projects/ppt-decks/five-element-spa-resort/003.jpg": true,
-    "assets/img/projects/ppt-decks/hermitage-chalets-aamby-valley/012.jpg": true,
-    "assets/img/projects/ppt-decks/leroy-residence-ghatkesar/002.jpg": true,
-    "assets/img/projects/ppt-decks/river-front-gated-community/002.jpg": true,
-    "assets/img/projects/ppt-sourced/chandras-residence/005.jpg": true,
-    "assets/img/projects/ppt-sourced/desai-residence/001.jpg": true,
-    "assets/img/projects/ppt-sourced/namtech-proposed-campus/009.jpg": true
-  };
   var existingProjectIds = {};
 
   projects.forEach(function (project) {
@@ -1747,18 +1725,25 @@ if (window.pptProjectData) {
     }
   });
 
+  projects.forEach(function (project) {
+    project.image = "";
+    project.gallery = [];
+  });
+
   Object.keys(pptProjectData.overrides).forEach(function (id) {
     var project = projects.find(function (item) { return item.id === id; });
     var source = pptProjectData.overrides[id];
     if (!project) return;
 
-    var availableImages = source.gallery.filter(function (imagePath) {
-      return !excludedPptImages[imagePath];
-    });
-    project.image = excludedPptImages[source.image] ? availableImages[0] : source.image;
-    project.gallery = availableImages.filter(function (imagePath) {
-      return imagePath !== project.image;
-    });
+    project.image = source.image || "";
+    project.gallery = source.gallery || [];
+    if (source.disciplines) {
+      project.services = project.services || {};
+      project.services.architecture = !!source.disciplines.architecture;
+      project.services.interiorDesign = !!source.disciplines.interiorDesign;
+      project.services.landscape = !!source.disciplines.landscape;
+      project.services.masterPlan = !!source.disciplines.masterPlan;
+    }
   });
 
   var projectOrder = {};
@@ -1772,16 +1757,10 @@ if (window.pptProjectData) {
     if (bOrder === undefined) return -1;
     return aOrder - bOrder;
   });
-}
-
-projects.forEach(function (project) {
-  project.gallery = (project.gallery || []).filter(function (imagePath) {
-    return !unavailableProjectImages[imagePath];
+  projects = projects.filter(function (project) {
+    return !!pptProjectData.overrides[project.id];
   });
-  if (unavailableProjectImages[project.image]) {
-    project.image = project.gallery.shift() || "";
-  }
-});
+}
 
 window.projects = projects;
 
@@ -1875,36 +1854,9 @@ window.projects = projects;
     { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } },
     { id: "architecture", label: "Architecture", service: "architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
     { id: "interior-design", label: "Interior Design", service: "interiorDesign", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
-    { id: "planning", label: "Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } }
+    { id: "planning", label: "Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
+    { id: "landscape", label: "Landscape", service: "landscape", matches: function (p) { return !!(p.services && p.services.landscape); } }
   ];
-  // Image numbers refer to each project's cover image followed by its gallery order.
-  var DISCIPLINE_PHOTO_INDICES = {
-    "my-eye-hospital": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], interiorDesign: [19, 20, 21, 22, 23, 24, 25, 26, 27] },
-    "golf-academy-aamby": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 40], interiorDesign: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39] },
-    "delphi-resort": { architecture: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24], interiorDesign: [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45] },
-    "lv-stitching-unit": { architecture: [1], landscape: [1], interiorDesign: [] },
-    "five-element-spa-resort": { architecture: [4, 5, 6, 7, 8, 9, 10, 11, 12], landscape: [1, 2, 3, 7, 8, 9, 10, 11, 12], interiorDesign: [] },
-    "tmtc-pune": { architecture: [1], masterPlan: [1] },
-    "spa-beach-resort-goa": { architecture: [3, 8, 10, 11, 12, 13], landscape: [2, 4, 5, 6, 7, 8, 9], interiorDesign: [] },
-    "wellness-retreat-alwar": { architecture: [4, 5, 6, 7, 8, 12, 13, 14], interiorDesign: [], masterPlan: [1, 2, 3] },
-    "kailasa-coonoor": { architecture: [4, 5, 6, 7, 8, 9, 10, 11], landscape: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11], masterPlan: [1, 2, 3] },
-    "golf-apartments-aamby": { architecture: [8, 9, 10, 11], masterPlan: [1, 2, 3, 4, 5, 6, 7] },
-    "golf-course-masterplans": { landscape: [1, 2], masterPlan: [1, 2] },
-    "eco-resort-stok-ladakh": { architecture: [1, 2, 3, 4, 5], landscape: [1, 2, 3, 4], interiorDesign: [] },
-    "pandit-ji-residence": { architecture: [1], interiorDesign: [] },
-    "river-front-gated-community": { architecture: [3, 4, 5], landscape: [1, 2], masterPlan: [1, 2] },
-    "namtech-proposed-campus": { architecture: [4, 5, 6, 7], masterPlan: [1, 2, 3] },
-    "cavalosim-resort": { architecture: [1], masterPlan: [2] },
-    "starter-hut-garry-player-dlf": { architecture: [1, 2], landscape: [1, 2] },
-    "singhvi-residence-neetibagh": { architecture: [], interiorDesign: [1, 2, 3, 4, 5, 6, 7, 8] },
-    "silverglades-farms-tarudhan": { architecture: [1, 3, 4, 5, 6], masterPlan: [2] },
-    "oliander-farm-karjat": { architecture: [1, 2, 3, 4, 5], interiorDesign: [] },
-    "wellness-resort-carnoustie-rameshwaram": { architecture: [1, 2, 3, 4, 5], interiorDesign: [] },
-    "panchsheel-park-club-pool": { architecture: [1, 2, 3, 4, 5, 6], landscape: [1, 2] },
-    "integrated-golf-haridwar": { landscape: [1, 2], masterPlan: [1, 2] },
-    "ashtang-yog-ashram-syaat": { architecture: [3, 4, 5], masterPlan: [1, 2] },
-    "meditation-centre-maunam": { architecture: [1, 2, 3, 4, 5, 6], interiorDesign: [7, 8] }
-  };
   var currentFilter = "all";
   var failedProjectImages = Object.create(null);
   var slideImageCache = Object.create(null);
@@ -1931,23 +1883,28 @@ window.projects = projects;
   }
 
   function projectImagesForFilter(p, filterId) {
-    var images = [p.image].concat(p.gallery || []).filter(function (imagePath) {
-      return imagePath && !unavailableProjectImages[imagePath] && !failedProjectImages[imagePath];
-    });
+    var source = window.pptProjectData && window.pptProjectData.overrides[p.id];
     var group = PROJECT_GROUPS.find(function (item) { return item.id === filterId; });
-    if (!group || !group.service) return images;
-    if (activeServices(p).length === 1) return images;
+    if (!source) return [];
+    if (!group || !group.service) {
+      return [source.image].concat(source.gallery || []).filter(function (imagePath) {
+        return imagePath && !failedProjectImages[imagePath];
+      });
+    }
 
-    var selections = DISCIPLINE_PHOTO_INDICES[p.id];
-    var indices = selections && selections[group.service];
-    if (!Array.isArray(indices)) return images;
-    return indices.map(function (index) { return images[index - 1]; }).filter(Boolean);
+    var disciplineImages = source.disciplines && source.disciplines[group.service];
+    if (!Array.isArray(disciplineImages)) return [];
+    return disciplineImages.filter(function (imagePath) {
+      return imagePath && !failedProjectImages[imagePath];
+    });
   }
 
   /* ---------- Grid ---------- */
   function renderGrid() {
     var availableGroups = PROJECT_GROUPS.filter(function (group) {
-      return projects.some(group.matches);
+      return projects.some(function (project) {
+        return group.matches(project) && projectImagesForFilter(project, group.id).length > 0;
+      });
     });
 
     filterBar.innerHTML = '<button class="project-filter" type="button" data-filter="all" aria-pressed="false">All</button>' +
@@ -1972,7 +1929,7 @@ window.projects = projects;
     currentFilter = selectedGroup ? selectedGroup.id : "all";
 
     var visibleProjects = currentFilter === "all"
-      ? projects
+      ? projects.filter(function (project) { return projectImagesForFilter(project, "all").length > 0; })
       : projects.filter(function (p) {
         return selectedGroup.matches(p) && projectImagesForFilter(p, currentFilter).length > 0;
       });

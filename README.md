@@ -9,7 +9,8 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
 - `scripts/projects.js` — project data + full-screen popup behavior
-- `scripts/ppt-project-data.js` — project order and photo galleries imported from the six mother decks
+- `scripts/ppt-project-data.js` — slide galleries and per-discipline image mappings imported from the six mother decks
+- `scripts/import-ppt-slides.ps1` — Windows/PowerPoint importer for regenerating the slide images and mappings
 - `assets/img/projects/` — local project images used by the homepage and project gallery
 
 ## Project editing
@@ -18,7 +19,7 @@ Edit the `projects` array in `scripts/projects.js`. Each project has:
 
 Clicking a project card opens a full-screen case-study overlay.
 
-The order, imported galleries, and homepage hero sequence from the six mother PowerPoints are in `scripts/ppt-project-data.js`; images are extracted from the slides without their overlaid title and logo text. Keep image references relative to the repository root so they work on GitHub Pages and on other systems. Project images are displayed in consistent 16:9 frames and cropped to fit.
+The order, slide galleries, discipline mappings, and homepage hero sequence from the six mother PowerPoints are in `scripts/ppt-project-data.js`. To regenerate them, place all six `MOTHER...pptx` files in the repository root and run `powershell -ExecutionPolicy Bypass -File scripts/import-ppt-slides.ps1` on Windows with Microsoft PowerPoint installed. The importer renders complete landscape slides, cropping the footer with its title and logo, and writes the images under `assets/img/projects/ppt-slides/`. Keep image references relative to the repository root so they work on GitHub Pages and on other systems. The All filter combines the decks; discipline filters use only slides assigned to that discipline.
 
 ## Website guide
 The floating "Ask VVA" guide uses locally curated responses and the project data already included on the site. It does not send questions to an AI provider or answer beyond the site's published information. Project links open their gallery directly using `projects.html?project=<project-id>`.
