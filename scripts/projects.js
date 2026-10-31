@@ -1843,19 +1843,19 @@ window.projects = projects;
   var SERVICE_LABELS = {
     architecture: "Architecture",
     landscape: "Landscape",
-    interiorDesign: "Interior Design",
+    interiorDesign: "Interiors",
     designBuild: "Design Build",
     masterPlan: "Planning"
   };
 
   var PROJECT_GROUPS = [
+    { id: "architecture", label: "Architecture", service: "architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
+    { id: "interior-design", label: "Interiors", service: "interiorDesign", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
+    { id: "planning", label: "Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
+    { id: "landscape", label: "Landscape", service: "landscape", matches: function (p) { return !!(p.services && p.services.landscape); } },
     { id: "residential", label: "Residential", matches: function (p) { return p.category === "residential"; } },
     { id: "hospitality", label: "Hospitality", matches: function (p) { return p.category === "hospitality"; } },
-    { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } },
-    { id: "architecture", label: "Architecture", service: "architecture", matches: function (p) { return !!(p.services && p.services.architecture); } },
-    { id: "interior-design", label: "Interior Design", service: "interiorDesign", matches: function (p) { return !!(p.services && p.services.interiorDesign); } },
-    { id: "planning", label: "Planning", service: "masterPlan", matches: function (p) { return !!(p.services && p.services.masterPlan); } },
-    { id: "landscape", label: "Landscape", service: "landscape", matches: function (p) { return !!(p.services && p.services.landscape); } }
+    { id: "commercial", label: "Commercial", matches: function (p) { return p.category === "commercial"; } }
   ];
   var currentFilter = "all";
   var failedProjectImages = Object.create(null);

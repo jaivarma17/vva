@@ -77,7 +77,6 @@ window.pptProjectData = {
   "homeHeroIds": [
     "golf-academy-aamby",
     "machaan-aamby-valley",
-    "a-frame-aamby-valley",
     "burmese-chalet-aamby-valley",
     "hermitage-chalets-aamby-valley",
     "bridges-pga-aamby-valley",
@@ -92,7 +91,6 @@ window.pptProjectData = {
     "golf-academy-ansals",
     "bridges-bulkhead-garry-player-dlf",
     "starter-hut-garry-player-dlf",
-    "sahay-residence",
     "chandras-residence",
     "t-house-pune",
     "cottage-shamrock",
