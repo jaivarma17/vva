@@ -1860,6 +1860,7 @@ window.projects = projects;
   var currentFilter = "all";
   var failedProjectImages = Object.create(null);
   var slideImageCache = Object.create(null);
+  var cleanedImageCache = Object.create(null);
 
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1880,6 +1881,57 @@ window.projects = projects;
   function activeServices(p) {
     if (!p.services) return [];
     return Object.keys(SERVICE_LABELS).filter(function (key) { return !!p.services[key]; });
+  }
+
+  function removeBlackImageEdge(image) {
+    var src = image.currentSrc || image.src;
+    if (cleanedImageCache[src]) return cleanedImageCache[src];
+
+    var width = image.naturalWidth;
+    var height = image.naturalHeight;
+    var canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    var context = canvas.getContext("2d", { willReadFrequently: true });
+    context.drawImage(image, 0, 0);
+
+    var pixels = context.getImageData(0, 0, width, height);
+    var columnsToReplace = 0;
+    for (var x = width - 1; x >= Math.max(0, width - 4); x -= 1) {
+      var blackPixels = 0;
+      for (var y = 0; y < height; y += 1) {
+        var pixel = (y * width + x) * 4;
+        if (pixels.data[pixel] < 18 && pixels.data[pixel + 1] < 18 && pixels.data[pixel + 2] < 18) {
+          blackPixels += 1;
+        }
+      }
+      if (blackPixels / height < 0.98) break;
+      columnsToReplace += 1;
+    }
+
+    if (!columnsToReplace) {
+      cleanedImageCache[src] = { image: image, src: src };
+      return cleanedImageCache[src];
+    }
+
+    var sourceColumn = width - columnsToReplace - 1;
+    for (var edgeX = sourceColumn + 1; edgeX < width; edgeX += 1) {
+      for (var row = 0; row < height; row += 1) {
+        var sourcePixel = (row * width + sourceColumn) * 4;
+        var targetPixel = (row * width + edgeX) * 4;
+        pixels.data[targetPixel] = pixels.data[sourcePixel];
+        pixels.data[targetPixel + 1] = pixels.data[sourcePixel + 1];
+        pixels.data[targetPixel + 2] = pixels.data[sourcePixel + 2];
+        pixels.data[targetPixel + 3] = pixels.data[sourcePixel + 3];
+      }
+    }
+    context.putImageData(pixels, 0, 0);
+
+    cleanedImageCache[src] = {
+      image: canvas,
+      src: canvas.toDataURL("image/jpeg", 1)
+    };
+    return cleanedImageCache[src];
   }
 
   function projectImagesForFilter(p, filterId) {
@@ -1949,6 +2001,16 @@ window.projects = projects;
         '</button>'
       );
     }).join("");
+
+    projectList.querySelectorAll(".project-media img").forEach(function (image) {
+      function cleanLoadedImage() {
+        if (image.dataset.edgeChecked || !image.naturalWidth) return;
+        image.dataset.edgeChecked = "true";
+        image.src = removeBlackImageEdge(image).src;
+      }
+      image.addEventListener("load", cleanLoadedImage);
+      if (image.complete) cleanLoadedImage();
+    });
 
     resultCount.textContent = "Showing " + visibleProjects.length + " projects";
     projectList.querySelectorAll(".project-card").forEach(function (card) {
@@ -2035,7 +2097,7 @@ window.projects = projects;
     slideImg.style.removeProperty("opacity");
   }
 
-  function pixelTransitionSlide(nextImage, currentTransition, nextAlt) {
+  function pixelTransitionSlide(nextImage, nextSrc, currentTransition, nextAlt) {
     var outgoingImage = slideImg;
     var startedAt = 0;
     var swapped = false;
@@ -2062,7 +2124,7 @@ window.projects = projects;
         slidePixelCanvas.style.opacity = String(progress);
       } else {
         if (!swapped) {
-          slideImg.src = nextImage.src;
+          slideImg.src = nextSrc;
           slideImg.alt = nextAlt;
           slideImg.style.opacity = "0";
           swapped = true;
@@ -2150,6 +2212,7 @@ window.projects = projects;
         if (settled || currentTransition !== slideTransition) return;
         settled = true;
         clearLoadTimer();
+        var displayImage = removeBlackImageEdge(nextImage);
         slideError.hidden = true;
         slideCount.textContent = pad(current + 1) + " / " + slides.length;
         slidePrev.hidden = slides.length < 2;
@@ -2158,13 +2221,13 @@ window.projects = projects;
         preload(current + 1);
 
         if (skipTransition || reduceMotion || !slideImg.complete || !slideImg.naturalWidth) {
-          slideImg.src = nextImage.src;
+          slideImg.src = displayImage.src;
           slideImg.alt = nextAlt;
           slideIsLoading = false;
           schedule();
           return;
         }
-        pixelTransitionSlide(nextImage, currentTransition, nextAlt);
+        pixelTransitionSlide(displayImage.image, displayImage.src, currentTransition, nextAlt);
       }
 
       function handleImageError() {
