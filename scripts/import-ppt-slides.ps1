@@ -157,6 +157,47 @@ function Get-Tokens([string]$text) {
   return @($tokens | Where-Object { $_.Length -gt 1 -and $stopWords -notcontains $_ } | Select-Object -Unique)
 }
 
+function Copy-ImagePatch([Drawing.Bitmap]$bitmap, [int]$sourceX, [int]$sourceY, [int]$width, [int]$height, [int]$destinationX, [int]$destinationY) {
+  $sourceRectangle = [Drawing.Rectangle]::new($sourceX, $sourceY, $width, $height)
+  $destinationRectangle = [Drawing.Rectangle]::new($destinationX, $destinationY, $width, $height)
+  $patch = $bitmap.Clone($sourceRectangle, $bitmap.PixelFormat)
+  $graphics = [Drawing.Graphics]::FromImage($bitmap)
+  try {
+    $graphics.DrawImage($patch, $destinationRectangle)
+  } finally {
+    $graphics.Dispose()
+    $patch.Dispose()
+  }
+}
+
+function Remove-EmbeddedBranding([Drawing.Bitmap]$bitmap, [string]$deckSlug, [int]$slideNumber) {
+  if ($deckSlug -ne "mother-combined") { return }
+
+  switch ($slideNumber) {
+    379 {
+      Copy-ImagePatch $bitmap 470 728 460 55 0 728
+      Copy-ImagePatch $bitmap 1000 710 185 70 1215 710
+    }
+    380 {
+      $graphics = [Drawing.Graphics]::FromImage($bitmap)
+      try {
+        $graphics.FillRectangle([Drawing.Brushes]::White, 70, 0, 390, 138)
+        $graphics.FillRectangle([Drawing.Brushes]::White, 1120, 680, 280, 108)
+      } finally {
+        $graphics.Dispose()
+      }
+    }
+    { $_ -in 527, 529, 530 } {
+      $graphics = [Drawing.Graphics]::FromImage($bitmap)
+      try {
+        $graphics.FillRectangle([Drawing.Brushes]::White, 1230, 660, 170, 128)
+      } finally {
+        $graphics.Dispose()
+      }
+    }
+  }
+}
+
 function Find-ProjectId([string]$label) {
   $normalizedLabel = Normalize-Text $label
   if ($normalizedLabel -eq "louisvuitton") { return "lv-stitching-unit" }
@@ -286,6 +327,7 @@ try {
             try {
               $graphics.InterpolationMode = [Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
               $graphics.DrawImage($sourceImage, [Drawing.Rectangle]::new(0, 0, $destination.Width, $destination.Height), [Drawing.Rectangle]::new(0, 0, $sourceImage.Width, $sourceHeight), [Drawing.GraphicsUnit]::Pixel)
+              Remove-EmbeddedBranding $destination $deck.Slug $slideNumber
               $destination.Save($targetImage, $imageEncoder, $imageParameters)
             } finally {
               $graphics.Dispose()
