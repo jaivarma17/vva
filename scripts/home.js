@@ -66,23 +66,16 @@
 
     var sourceWidth = source.naturalWidth || source.width;
     var sourceHeight = source.naturalHeight || source.height;
-    var sourceRatio = sourceWidth / sourceHeight;
-    var canvasRatio = width / height;
-    var sx = 0;
-    var sy = 0;
-    var sw = sourceWidth;
-    var sh = sourceHeight;
-    if (sourceRatio > canvasRatio) {
-      sw = sourceHeight * canvasRatio;
-      sx = (sourceWidth - sw) / 2;
-    } else {
-      sh = sourceWidth / canvasRatio;
-      sy = (sourceHeight - sh) / 2;
-    }
+    var scale = Math.min(width / sourceWidth, height / sourceHeight);
+    var drawWidth = sourceWidth * scale;
+    var drawHeight = sourceHeight * scale;
+    var offsetX = (width - drawWidth) / 2;
+    var offsetY = (height - drawHeight) / 2;
 
     pixelContext.imageSmoothingEnabled = false;
-    pixelContext.clearRect(0, 0, width, height);
-    pixelContext.drawImage(source, sx, sy, sw, sh, 0, 0, width, height);
+    pixelContext.fillStyle = "#090909";
+    pixelContext.fillRect(0, 0, width, height);
+    pixelContext.drawImage(source, 0, 0, sourceWidth, sourceHeight, offsetX, offsetY, drawWidth, drawHeight);
   }
 
   function cancelPixelTransition() {
@@ -214,6 +207,21 @@
   previous.addEventListener("click", function () { show(current - 1); });
   next.addEventListener("click", function () { show(current + 1); });
   toggle.addEventListener("click", function () { setPlaying(!playing); });
+  var touchStart = null;
+  hero.addEventListener("touchstart", function (event) {
+    var touch = event.changedTouches[0];
+    touchStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: true });
+  hero.addEventListener("touchend", function (event) {
+    if (!touchStart) return;
+    var touch = event.changedTouches[0];
+    var deltaX = touch.clientX - touchStart.x;
+    var deltaY = touch.clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(deltaX) < 40 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+    event.preventDefault();
+    show(current + (deltaX < 0 ? 1 : -1));
+  }, { passive: false });
   document.addEventListener("visibilitychange", schedule);
 
   image.addEventListener("error", function () {

@@ -9,7 +9,7 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
 - `scripts/projects.js` — project data + full-screen popup behavior
-- `scripts/ppt-project-data.js` — slide galleries and per-discipline image mappings imported from the six mother decks
+- `scripts/ppt-project-data.js` — slide galleries and per-discipline image mappings imported from the combined mother deck
 - `scripts/import-ppt-slides.ps1` — Windows/PowerPoint importer for regenerating the slide images and mappings
 - `assets/img/projects/` — local project images used by the homepage and project gallery
 
@@ -17,14 +17,14 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 Edit the `projects` array in `scripts/projects.js`. Each project has:
 `title`, `location`, `category`, `status`, `services`, `image`, `facts`, `gallery`, `short`, `lede`, and `copy`. The Projects page filters by category and enabled services. Projects with multiple disciplines appear in each relevant filter and only once in the All view.
 
-Clicking a project card opens a full-screen case-study overlay.
+Clicking a project card opens a full-screen case-study overlay. Project photos and the homepage hero use contain-fit sizing so the complete image stays visible in both portrait and landscape. Viewer controls and navigation reveal on hover for pointer devices and remain available on touch screens.
 
-The order, slide galleries, discipline mappings, and homepage hero sequence from the six mother PowerPoints are in `scripts/ppt-project-data.js`. To regenerate them, place all six `MOTHER...pptx` files in the repository root and run `powershell -ExecutionPolicy Bypass -File scripts/import-ppt-slides.ps1` on Windows with Microsoft PowerPoint installed. The importer renders complete landscape slides, cropping the footer with its title and logo, and writes the images under `assets/img/projects/ppt-slides/`. Keep image references relative to the repository root so they work on GitHub Pages and on other systems. The All filter combines the decks; discipline filters use only slides assigned to that discipline.
+The order, slide galleries, discipline mappings, and homepage hero sequence from `MOTHER COMBINED.pptx` are in `scripts/ppt-project-data.js`. To regenerate them, place `MOTHER COMBINED.pptx` in the repository root and run `powershell -ExecutionPolicy Bypass -File scripts/import-ppt-slides.ps1` on Windows with Microsoft PowerPoint installed. The importer renders full slides without cropping, omits the repeated project-name and studio-logo footer from each export, and writes the images under `assets/img/projects/ppt-slides/`. It refreshes existing exports when run. Keep image references relative to the repository root so they work on GitHub Pages and on other systems. The first homepage hero image is preserved when the importer runs.
 
 ## Website guide
 The floating "Ask VVA" guide uses locally curated responses and the project data already included on the site. It does not send questions to an AI provider or answer beyond the site's published information. Project links open their gallery directly using `projects.html?project=<project-id>`.
 
-The homepage slideshow image links to the gallery for the currently displayed project. Its built-project sequence is managed in `scripts/ppt-project-data.js`.
+The homepage slideshow image links to the gallery for the currently displayed project. Its built-project sequence is managed in `scripts/ppt-project-data.js`; the first hero image is preserved when slide mappings are regenerated.
 
 ## Preview
 Run from this folder:
