@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Vikram Varma & Associates — architects, planners and interior designers.">
   <title>Vikram Varma & Associates</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/home-hero/golf-academy-aamby.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="home-page">
@@ -16,7 +14,7 @@
 <main id="main">
   <section class="home-hero">
     <div class="home-hero-slideshow" aria-roledescription="carousel" aria-label="Featured projects">
-      <a id="home-hero-link" class="home-hero-link" href="projects.html?project=my-eye-hospital" aria-label="View My Eye Hospital & Wellness Centre project gallery"><img id="home-hero-image" class="home-hero-image" alt="" fetchpriority="high"></a>
+      <a id="home-hero-link" class="home-hero-link" href="projects.html?project=golf-academy-aamby" aria-label="View Golf Academy & Club project gallery"><img id="home-hero-image" class="home-hero-image is-visible" src="assets/img/home-hero/golf-academy-aamby.jpg" alt="" fetchpriority="high" decoding="async"></a>
       <div class="home-hero-progress" aria-hidden="true"><span id="home-hero-progress-fill"></span></div>
     </div>
     <div class="home-hero-title"><span>ARCHITECTURE • INTERIORS • PLANNING</span></div>
@@ -31,10 +29,9 @@
 </main>
 <footer class="site-footer"><div class="container footer-inner"><span class="footer-copyright"><img class="footer-logo" src="assets/img/vva-logo.png" alt="">© Vikram Varma &amp; Associates</span><span>New Delhi · India</span></div></footer>
 <div id="orientation-notice" class="orientation-notice" aria-live="polite"><span>Best when viewed in landscape</span></div>
-<script src="scripts/ppt-project-data.js"></script>
-<script src="scripts/projects.js"></script>
-<script src="scripts/home.js"></script>
-<script src="scripts/home-logos.js"></script>
-<script src="scripts/site-guide.js"></script>
-<script src="scripts/orientation-notice.js"></script>
+<script defer src="scripts/image-cleanup.js"></script>
+<script defer src="scripts/projects.js"></script>
+<script defer src="scripts/home.js"></script>
+<script defer src="scripts/site-guide.js"></script>
+<script defer src="scripts/orientation-notice.js"></script>
 </body></html>

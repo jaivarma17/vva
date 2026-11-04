@@ -7,25 +7,15 @@
   var toggle = document.getElementById("home-hero-toggle");
   var count = document.getElementById("home-hero-count");
   var progress = document.getElementById("home-hero-progress-fill");
-  if (!hero || !image || !imageLink || !previous || !next || !toggle || !count || !progress || !window.projects) return;
+  if (!hero || !image || !imageLink || !previous || !next || !toggle || !count || !progress) return;
 
-  var pptProjectData = window.pptProjectData;
-  var slides = (pptProjectData && pptProjectData.homeHeroIds || [])
-    .map(function (projectId) {
-      var project = projects.find(function (item) { return item.id === projectId; });
-      var source = pptProjectData.overrides[projectId];
-      return project && source && source.image
-        ? { id: project.id, title: project.title, image: source.image }
-        : null;
-    })
-    .filter(Boolean);
-  if (!slides.length) return;
-
-  document.querySelectorAll(".category-grid [data-home-project-image]").forEach(function (link) {
-    var source = pptProjectData.overrides[link.getAttribute("data-home-project-image")];
-    var categoryImage = link.querySelector("img");
-    if (source && source.image && categoryImage) categoryImage.src = source.image;
-  });
+  var slides = [
+    { id: "golf-academy-aamby", title: "Golf Academy & Club", image: "assets/img/home-hero/golf-academy-aamby.jpg" },
+    { id: "machaan-aamby-valley", title: "Machaan, Aamby Valley", image: "assets/img/home-hero/machaan-aamby-valley.jpg" },
+    { id: "burmese-chalet-aamby-valley", title: "Burmese Chalet, Aamby Valley", image: "assets/img/home-hero/burmese-chalet-aamby-valley.jpg" },
+    { id: "golf-academy-ansals", title: "Golf Academy, Ansals", image: "assets/img/home-hero/golf-academy-ansals.jpg" },
+    { id: "starter-hut-garry-player-dlf", title: "Starter Hut, DLF", image: "assets/img/home-hero/starter-hut-garry-player-dlf.jpg" }
+  ];
 
   var interval = 7000;
   var current = 0;
@@ -36,10 +26,14 @@
   var pixelCanvas = document.createElement("canvas");
   var pixelContext = pixelCanvas.getContext("2d");
   var pixelFrame = 0;
-  var imageReady = false;
+  var imageReady = image.complete && image.naturalWidth > 0;
   pixelCanvas.className = "home-hero-pixel-canvas";
   pixelCanvas.setAttribute("aria-hidden", "true");
-  hero.appendChild(pixelCanvas);
+  if (pixelContext && !reduceMotion) hero.appendChild(pixelCanvas);
+  if (imageReady && window.cleanPhotoImage) {
+    image.src = window.cleanPhotoImage(image).src;
+    image.dataset.photoSource = slides[0].image;
+  }
 
   function pad(number) { return number < 10 ? "0" + number : String(number); }
 
@@ -52,6 +46,7 @@
 
   function preload(index) {
     var preloadImage = new Image();
+    preloadImage.decoding = "async";
     preloadImage.src = slides[(index + slides.length) % slides.length].image;
   }
 
@@ -66,16 +61,23 @@
 
     var sourceWidth = source.naturalWidth || source.width;
     var sourceHeight = source.naturalHeight || source.height;
-    var scale = Math.min(width / sourceWidth, height / sourceHeight);
-    var drawWidth = sourceWidth * scale;
-    var drawHeight = sourceHeight * scale;
-    var offsetX = (width - drawWidth) / 2;
-    var offsetY = (height - drawHeight) / 2;
+    var sourceRatio = sourceWidth / sourceHeight;
+    var canvasRatio = width / height;
+    var sourceX = 0;
+    var sourceY = 0;
+    var sourceCropWidth = sourceWidth;
+    var sourceCropHeight = sourceHeight;
+    if (sourceRatio > canvasRatio) {
+      sourceCropWidth = sourceHeight * canvasRatio;
+      sourceX = (sourceWidth - sourceCropWidth) / 2;
+    } else {
+      sourceCropHeight = sourceWidth / canvasRatio;
+      sourceY = (sourceHeight - sourceCropHeight) / 2;
+    }
 
     pixelContext.imageSmoothingEnabled = false;
-    pixelContext.fillStyle = "#090909";
-    pixelContext.fillRect(0, 0, width, height);
-    pixelContext.drawImage(source, 0, 0, sourceWidth, sourceHeight, offsetX, offsetY, drawWidth, drawHeight);
+    pixelContext.clearRect(0, 0, width, height);
+    pixelContext.drawImage(source, sourceX, sourceY, sourceCropWidth, sourceCropHeight, 0, 0, width, height);
   }
 
   function cancelPixelTransition() {
@@ -89,7 +91,7 @@
     image.style.removeProperty("opacity");
   }
 
-  function pixelTransition(nextImage, currentTransition) {
+  function pixelTransition(nextImage, nextSrc, nextSlideSource, currentTransition) {
     var outgoingImage = image;
     var startedAt = 0;
     var swapped = false;
@@ -116,7 +118,8 @@
         pixelCanvas.style.opacity = String(progress);
       } else {
         if (!swapped) {
-          image.src = nextImage.src;
+          image.src = nextSrc;
+          image.dataset.photoSource = nextSlideSource;
           image.alt = "";
           image.style.opacity = "0";
           swapped = true;
@@ -146,46 +149,52 @@
     cancelPixelTransition();
     current = (index + slides.length) % slides.length;
     var currentTransition = ++transitionId;
-    var shouldPixelate = imageReady && image.classList.contains("is-visible") && !reduceMotion;
-    if (!shouldPixelate) image.classList.remove("is-visible");
-    imageLink.href = "projects.html?project=" + encodeURIComponent(slides[current].id);
-    imageLink.setAttribute("aria-label", "View " + slides[current].title + " project gallery");
+    var slide = slides[current];
+    var shouldPixelate = pixelContext && imageReady && image.classList.contains("is-visible") && !reduceMotion;
+    imageLink.href = "projects.html?project=" + encodeURIComponent(slide.id);
+    imageLink.setAttribute("aria-label", "View " + slide.title + " project gallery");
     count.textContent = pad(current + 1) + " / " + pad(slides.length);
     preload(current + 1);
     schedule();
 
-    function loadCurrentImage() {
+    if ((image.dataset.photoSource === slide.image || image.getAttribute("src") === slide.image) && image.complete && image.naturalWidth) {
+      image.classList.add("is-visible");
+      imageReady = true;
+      return;
+    }
+
+    var nextImage = new Image();
+    nextImage.decoding = "async";
+    nextImage.onload = function () {
       if (currentTransition !== transitionId) return;
-      var nextImage = new Image();
-      var didLoad = false;
-      nextImage.onload = function () {
-        if (didLoad) return;
-        didLoad = true;
-        if (currentTransition !== transitionId) return;
-        if (shouldPixelate) {
-          pixelTransition(nextImage, currentTransition);
-          return;
-        }
-        image.onload = function () {
-          if (currentTransition === transitionId) {
-            image.classList.add("is-visible");
-            imageReady = true;
-          }
-        };
-        image.src = nextImage.src;
-        image.alt = "";
-        if (image.complete && image.naturalWidth) {
+      var displayImage = window.cleanPhotoImage ? window.cleanPhotoImage(nextImage) : { image: nextImage, src: nextImage.src };
+      if (shouldPixelate) {
+        pixelTransition(displayImage.image, displayImage.src, slide.image, currentTransition);
+        return;
+      }
+      image.onload = function () {
+        if (currentTransition === transitionId) {
           image.classList.add("is-visible");
+          image.dataset.photoSource = slide.image;
           imageReady = true;
         }
+        image.onload = null;
       };
-      nextImage.onerror = function () {
-        if (currentTransition === transitionId) show(current + 1);
-      };
-      nextImage.src = slides[current].image;
-      if (nextImage.complete && nextImage.naturalWidth) nextImage.onload();
-    }
-    loadCurrentImage();
+      image.src = displayImage.src;
+      image.dataset.photoSource = slide.image;
+      image.alt = "";
+      if (image.complete && image.naturalWidth) {
+        image.classList.add("is-visible");
+        imageReady = true;
+      }
+    };
+    nextImage.onerror = function () {
+      if (currentTransition === transitionId) {
+        console.error("Could not load homepage hero image: " + slide.image);
+      }
+    };
+    nextImage.src = slide.image;
+    if (nextImage.complete && nextImage.naturalWidth) nextImage.onload();
   }
 
   function schedule() {
@@ -223,11 +232,6 @@
     show(current + (deltaX < 0 ? 1 : -1));
   }, { passive: false });
   document.addEventListener("visibilitychange", schedule);
-
-  image.addEventListener("error", function () {
-    image.classList.remove("is-visible");
-    if (slides.length > 1) show(current + 1);
-  });
 
   show(0);
   setPlaying(playing);
