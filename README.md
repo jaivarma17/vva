@@ -26,7 +26,9 @@ The project order, slide galleries, and discipline mappings from `MOTHER COMBINE
 ## Website guide
 The floating "Ask VVA" guide uses locally curated responses and the project data already included on the site. It does not send questions to an AI provider or answer beyond the site's published information. Project links open their gallery directly using `projects.html?project=<project-id>`.
 
-The homepage slideshow image links to the gallery for the currently displayed project. Its curated photo-only sequence is managed in `scripts/home.js`; the optimized hero images are stored separately so slide-map regeneration does not overwrite them.
+The homepage slideshow image links to the gallery for the currently displayed project. Its curated photo-only sequence is managed in `scripts/home.js`; the optimized hero images are stored separately so slide-map regeneration does not overwrite them. Portrait phones show each complete photo fitted to a compact white hero area sized to the screen width, while landscape phones and larger screens retain the cover crop. Slide changes fade from right to left.
+
+All pages share a footer with three bordered sections for studio branding, vertically stacked site navigation, and clickable email and telephone links. The sections sit side by side on wider screens and stack on mobile. Short pages keep the footer at the bottom of the viewport, while longer pages place it after their content.
 
 ## Preview
 Run from this folder:
