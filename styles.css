@@ -429,6 +429,7 @@ body :is(.site-header,.site-header *,nav,nav *, .projects-utility-nav,.projects-
   .home-page .home-hero-progress{bottom:-42px}
   .home-page .home-hero-title{bottom:48px;color:#fff}
   .home-page .home-hero .home-hero-controls{right:0;bottom:4px;left:0;justify-content:center;transform:none;opacity:1}
+  .home-page .home-hero:hover .home-hero-controls,.home-page .home-hero:focus-within .home-hero-controls{transform:none}
 }
 @media(max-width:950px) and (max-height:500px) and (orientation:landscape){
   .modal.is-open .modal-bar{min-height:48px;padding:4px 12px}
