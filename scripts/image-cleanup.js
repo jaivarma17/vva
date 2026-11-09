@@ -129,42 +129,6 @@
       imageChanged = true;
     }
 
-    if (src.indexOf("/assets/img/projects/ppt-slides/") !== -1) {
-      var logoBounds = { left: width, top: height, right: 0, bottom: 0 };
-      var logoPixelCount = 0;
-      var scanLeft = Math.floor(width * 0.88);
-      var scanTop = Math.floor(height * 0.8);
-      for (var logoY = scanTop; logoY < height; logoY += 1) {
-        for (var logoX = scanLeft; logoX < width; logoX += 1) {
-          var logoPixel = (logoY * width + logoX) * 4;
-          var red = pixels.data[logoPixel];
-          var green = pixels.data[logoPixel + 1];
-          var blue = pixels.data[logoPixel + 2];
-          if (red < 130 || green > 95 || blue > 125 || red < green * 1.6 || red < blue * 1.4) continue;
-          logoPixelCount += 1;
-          logoBounds.left = Math.min(logoBounds.left, logoX);
-          logoBounds.top = Math.min(logoBounds.top, logoY);
-          logoBounds.right = Math.max(logoBounds.right, logoX);
-          logoBounds.bottom = Math.max(logoBounds.bottom, logoY);
-        }
-      }
-
-      var logoWidth = logoBounds.right - logoBounds.left + 1;
-      var logoHeight = logoBounds.bottom - logoBounds.top + 1;
-      var expectedLogoSize = logoWidth >= width * 0.025 && logoWidth <= width * 0.12 &&
-        logoHeight >= height * 0.025 && logoHeight <= height * 0.14;
-      if (logoPixelCount >= width * height * 0.0003 && expectedLogoSize) {
-        var patchLeft = Math.max(0, logoBounds.left - 8);
-        var patchTop = Math.max(0, logoBounds.top - 8);
-        var patchRight = Math.min(width, logoBounds.right + 9);
-        var patchBottom = Math.min(height, logoBounds.bottom + 9);
-        context.fillStyle = "#fff";
-        context.fillRect(patchLeft, patchTop, patchRight - patchLeft, patchBottom - patchTop);
-        pixels = context.getImageData(0, 0, width, height);
-        imageChanged = true;
-      }
-    }
-
     var maxBorder = Math.max(1, Math.ceil(width * 2 / 254));
     var minRightTrim = Math.min(width - 1, Math.max(1, Math.ceil(width * 2 / 254)));
     var minBottomTrim = Math.min(height - 1, Math.max(1, Math.ceil(height * 2 / 254)));

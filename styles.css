@@ -323,12 +323,15 @@ p,.home-intro p,.intro-grid p,.modal-lede{font-family:var(--font-body)}
   .projects-page .project-card-grid{grid-template-columns:minmax(0,1fr)}
 }
 .projects-page{background:#fff}
-.projects-page .project-media{display:block;background:#fff}
+.projects-page .project-media{position:relative;display:block;background:#fff;overflow:hidden}
 .projects-page .slideshow,.projects-page .slide-stage{background:#fff}
 .projects-page .project-media img{width:100%;height:auto;max-width:none;max-height:none}
 .projects-page .slide-stage{display:block;aspect-ratio:auto;min-height:0;max-height:none;height:auto}
 .projects-page .slide-stage img{display:block;width:auto;height:auto;max-width:100%;max-height:55svh;margin-inline:auto;object-fit:contain}
 .projects-page .project-media img,.projects-page .slide-stage img{border:0;outline:0;box-shadow:none;clip-path:none}
+.project-media::after,.slide-stage::after,.home-hero-slideshow::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='180' viewBox='0 0 260 180'%3E%3Cg transform='rotate(-28 130 90)' font-family='Arial,sans-serif' font-size='18' font-weight='700' letter-spacing='3' text-anchor='middle' fill='%23fff' fill-opacity='.16' stroke='%23000' stroke-opacity='.12' stroke-width='1'%3E%3Ctext x='130' y='60'%3EVVA%3C/text%3E%3Ctext x='130' y='145'%3EVVA%3C/text%3E%3C/g%3E%3C/svg%3E");background-size:260px 180px}
+.project-media.needs-logo::after,.slide-stage.needs-logo::after,.home-hero-slideshow::after{background-image:url("assets/img/vva-logo.png"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='180' viewBox='0 0 260 180'%3E%3Cg transform='rotate(-28 130 90)' font-family='Arial,sans-serif' font-size='18' font-weight='700' letter-spacing='3' text-anchor='middle' fill='%23fff' fill-opacity='.16' stroke='%23000' stroke-opacity='.12' stroke-width='1'%3E%3Ctext x='130' y='60'%3EVVA%3C/text%3E%3Ctext x='130' y='145'%3EVVA%3C/text%3E%3C/g%3E%3C/svg%3E");background-size:clamp(42px,5vw,68px) auto,260px 180px;background-position:right 2% bottom 3%,0 0;background-repeat:no-repeat,repeat}
+.home-hero-progress{z-index:2}
 .projects-page .client-logo-banner{margin-top:32px}
 .projects-page .client-logo-group{padding-block:8px}
 .projects-page .client-logo-item{flex-basis:clamp(100px,10vw,130px);height:72px}
