@@ -9,7 +9,7 @@ A simplified static website based on the supplied Vikram Varma & Associates mate
 - `contact.html` — simple contact page
 - `styles.css` — one shared design system
 - `scripts/projects.js` — project data + full-screen popup behavior
-- `scripts/image-cleanup.js` — trims about 2 mm from the right and bottom of site photos, removes thin black edges, and turns slide-edge-connected neutral backgrounds white while preserving slide logos
+- `scripts/image-cleanup.js` — preserves full image dimensions while replacing thin black edge lines and turning slide-edge-connected neutral backgrounds white, preserving slide logos
 - `scripts/ppt-project-data.js` — slide galleries and per-discipline image mappings imported from the combined mother deck
 - `scripts/import-ppt-slides.ps1` — Windows/PowerPoint importer for regenerating the slide images and mappings
 - `assets/img/home-hero/` — optimized photo-only images for the homepage slideshow

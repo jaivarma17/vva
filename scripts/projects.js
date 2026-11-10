@@ -1890,8 +1890,6 @@ window.projects = projects;
       "assets/img/projects/ppt-slides/cottage-anandam-kotabagh/mother-combined-491.jpg": true
     }
   };
-  var slideStage = slideshow.querySelector(".slide-stage");
-
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   var slides = [];
@@ -1904,7 +1902,6 @@ window.projects = projects;
   var hovering = false;
   var activeTab = "photos";
   var currentTitle = "";
-  var currentProjectId = "";
 
   function pad(n) { return n < 10 ? "0" + n : "" + n; }
   function statusLabel(p) { return p.status === "built" ? "Built" : "Concept"; }
@@ -1923,7 +1920,7 @@ window.projects = projects;
       : [];
     var firstPptImages = [source.image].concat(source.gallery || []);
     if (!group || !group.service) {
-      return preferredImages.concat(firstPptImages).filter(function (imagePath, index, images) {
+      return firstPptImages.slice(0, 1).concat(preferredImages, firstPptImages.slice(1)).filter(function (imagePath, index, images) {
         return imagePath && images.indexOf(imagePath) === index && !failedProjectImages[imagePath] &&
           !(duplicateProjectImages[p.id] && duplicateProjectImages[p.id][imagePath]);
       });
@@ -1931,7 +1928,7 @@ window.projects = projects;
 
     var disciplineImages = source.disciplines && source.disciplines[group.service];
     if (!Array.isArray(disciplineImages)) return [];
-    return preferredImages.concat(disciplineImages).filter(function (imagePath, index, images) {
+    return disciplineImages.slice(0, 1).concat(preferredImages, disciplineImages.slice(1)).filter(function (imagePath, index, images) {
       return imagePath && images.indexOf(imagePath) === index && !failedProjectImages[imagePath] &&
         !(duplicateProjectImages[p.id] && duplicateProjectImages[p.id][imagePath]);
     });
@@ -1980,11 +1977,9 @@ window.projects = projects;
 
     projectList.innerHTML = visibleProjects.map(function (p) {
       var cardImage = projectImagesForFilter(p, currentFilter)[0];
-      var preferredImage = window.projectPhotoData && window.projectPhotoData[p.id];
-      var logoClass = cardImage === preferredImage ? " needs-logo" : "";
       return (
         '<button class="project-card" type="button" data-id="' + p.id + '" aria-label="View ' + p.title + ', ' + p.location + '">' +
-          '<div class="project-media' + logoClass + '"><img src="' + cardImage + '" alt="" loading="lazy"></div>' +
+          '<div class="project-media"><img src="' + cardImage + '" alt="" loading="lazy"></div>' +
           '<span class="project-caption"><span class="project-name">' + p.title + '</span><span class="project-location">' + p.location + '</span></span>' +
         '</button>'
       );
@@ -2185,7 +2180,6 @@ window.projects = projects;
     function loadCurrent() {
       current = (index + slides.length) % slides.length;
       var src = slides[current];
-      slideStage.classList.toggle("needs-logo", !!(window.projectPhotoData && window.projectPhotoData[currentProjectId] === src));
       var nextAlt = currentTitle + " — photo " + (current + 1) + " of " + slides.length;
       var nextImage = preload(current);
       var settled = false;
@@ -2295,7 +2289,6 @@ window.projects = projects;
     var p = projects.find(function (item) { return item.id === id; });
     if (!p) return;
 
-    currentProjectId = p.id;
     currentTitle = p.title;
     modalTitle.textContent = p.title;
     modalLede.textContent = p.lede;

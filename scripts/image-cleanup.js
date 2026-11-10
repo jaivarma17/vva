@@ -130,9 +130,6 @@
     }
 
     var maxBorder = Math.max(1, Math.ceil(width * 2 / 254));
-    var minRightTrim = Math.min(width - 1, Math.max(1, Math.ceil(width * 2 / 254)));
-    var minBottomTrim = Math.min(height - 1, Math.max(1, Math.ceil(height * 2 / 254)));
-    var crop = { left: 0, top: 0, right: 0, bottom: 0 };
     function blackRatio(startX, startY, stepX, stepY, count) {
       var blackPixels = 0;
       for (var i = 0; i < count; i += 1) {
@@ -144,35 +141,59 @@
       return blackPixels / count;
     }
 
-    while (crop.left < maxBorder && blackRatio(crop.left, 0, 0, 1, height) >= 0.98) crop.left += 1;
-    while (crop.right < maxBorder && blackRatio(width - crop.right - 1, 0, 0, 1, height) >= 0.98) crop.right += 1;
-    while (crop.top < maxBorder && blackRatio(0, crop.top, 1, 0, width) >= 0.98) crop.top += 1;
-    while (crop.bottom < maxBorder &&
-      blackRatio(0, height - crop.bottom - 1, 1, 0, width) >= 0.98) crop.bottom += 1;
-    crop.right = Math.max(crop.right, minRightTrim);
-    crop.bottom = Math.max(crop.bottom, minBottomTrim);
+    var leftEdge = 0;
+    var rightEdge = 0;
+    var topEdge = 0;
+    var bottomEdge = 0;
+    while (leftEdge < maxBorder && blackRatio(leftEdge, 0, 0, 1, height) >= 0.65) leftEdge += 1;
+    while (rightEdge < maxBorder && blackRatio(width - rightEdge - 1, 0, 0, 1, height) >= 0.65) rightEdge += 1;
+    while (topEdge < maxBorder && blackRatio(0, topEdge, 1, 0, width) >= 0.65) topEdge += 1;
+    while (bottomEdge < maxBorder &&
+      blackRatio(0, height - bottomEdge - 1, 1, 0, width) >= 0.65) bottomEdge += 1;
 
-    if (crop.left + crop.right + crop.top + crop.bottom) {
-      var croppedWidth = width - crop.left - crop.right;
-      var croppedHeight = height - crop.top - crop.bottom;
-      if (croppedWidth > 0 && croppedHeight > 0) {
-        var croppedCanvas = document.createElement("canvas");
-        croppedCanvas.width = croppedWidth;
-        croppedCanvas.height = croppedHeight;
-        croppedCanvas.getContext("2d").drawImage(
-          canvas,
-          crop.left,
-          crop.top,
-          croppedWidth,
-          croppedHeight,
-          0,
-          0,
-          croppedWidth,
-          croppedHeight
-        );
-        canvas = croppedCanvas;
-        imageChanged = true;
+    for (var leftX = 0; leftX < leftEdge; leftX += 1) {
+      for (var leftY = 0; leftY < height; leftY += 1) {
+        var leftSource = (leftY * width + leftEdge) * 4;
+        var leftTarget = (leftY * width + leftX) * 4;
+        pixels.data[leftTarget] = pixels.data[leftSource];
+        pixels.data[leftTarget + 1] = pixels.data[leftSource + 1];
+        pixels.data[leftTarget + 2] = pixels.data[leftSource + 2];
+        pixels.data[leftTarget + 3] = pixels.data[leftSource + 3];
       }
+    }
+    for (var rightX = 0; rightX < rightEdge; rightX += 1) {
+      for (var rightY = 0; rightY < height; rightY += 1) {
+        var rightSource = (rightY * width + width - rightEdge - 1) * 4;
+        var rightTarget = (rightY * width + width - rightX - 1) * 4;
+        pixels.data[rightTarget] = pixels.data[rightSource];
+        pixels.data[rightTarget + 1] = pixels.data[rightSource + 1];
+        pixels.data[rightTarget + 2] = pixels.data[rightSource + 2];
+        pixels.data[rightTarget + 3] = pixels.data[rightSource + 3];
+      }
+    }
+    for (var topY = 0; topY < topEdge; topY += 1) {
+      for (var topX = 0; topX < width; topX += 1) {
+        var topSource = (topEdge * width + topX) * 4;
+        var topTarget = (topY * width + topX) * 4;
+        pixels.data[topTarget] = pixels.data[topSource];
+        pixels.data[topTarget + 1] = pixels.data[topSource + 1];
+        pixels.data[topTarget + 2] = pixels.data[topSource + 2];
+        pixels.data[topTarget + 3] = pixels.data[topSource + 3];
+      }
+    }
+    for (var bottomY = 0; bottomY < bottomEdge; bottomY += 1) {
+      for (var bottomX = 0; bottomX < width; bottomX += 1) {
+        var bottomSource = ((height - bottomEdge - 1) * width + bottomX) * 4;
+        var bottomTarget = ((height - bottomY - 1) * width + bottomX) * 4;
+        pixels.data[bottomTarget] = pixels.data[bottomSource];
+        pixels.data[bottomTarget + 1] = pixels.data[bottomSource + 1];
+        pixels.data[bottomTarget + 2] = pixels.data[bottomSource + 2];
+        pixels.data[bottomTarget + 3] = pixels.data[bottomSource + 3];
+      }
+    }
+    if (leftEdge || rightEdge || topEdge || bottomEdge) {
+      context.putImageData(pixels, 0, 0);
+      imageChanged = true;
     }
 
     imageCache[src] = imageChanged
