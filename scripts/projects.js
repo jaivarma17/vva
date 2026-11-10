@@ -1827,6 +1827,7 @@ window.projects = projects;
 
   var slideImg = document.getElementById("slide-img");
   var slideshow = document.getElementById("slideshow");
+  var slideImageFrame = slideshow.querySelector(".slide-image-frame");
   var slidePrev = document.getElementById("slide-prev");
   var slideNext = document.getElementById("slide-next");
   var slideCount = document.getElementById("slide-count");
@@ -1989,7 +1990,9 @@ window.projects = projects;
       function cleanLoadedImage() {
         if (image.dataset.edgeChecked || !image.naturalWidth) return;
         image.dataset.edgeChecked = "true";
-        image.src = window.cleanPhotoImage(image).src;
+        var cleaned = window.cleanPhotoImage(image);
+        image.parentElement.classList.toggle("has-source-logo", cleaned.hasEmbeddedLogo);
+        image.src = cleaned.src;
       }
       image.addEventListener("load", cleanLoadedImage);
       if (image.complete) cleanLoadedImage();
@@ -2196,6 +2199,7 @@ window.projects = projects;
         settled = true;
         clearLoadTimer();
         var displayImage = window.cleanPhotoImage(nextImage);
+        slideImageFrame.classList.toggle("has-source-logo", displayImage.hasEmbeddedLogo);
         slideError.hidden = true;
         slideCount.textContent = pad(current + 1) + " / " + slides.length;
         slidePrev.hidden = slides.length < 2;

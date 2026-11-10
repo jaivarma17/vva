@@ -196,9 +196,36 @@
       imageChanged = true;
     }
 
+    var brandPixels = 0;
+    var brandMinX = width;
+    var brandMinY = height;
+    var brandMaxX = 0;
+    var brandMaxY = 0;
+    for (var brandY = Math.floor(height * 0.78); brandY < height * 0.98; brandY += 1) {
+      for (var brandX = Math.floor(width * 0.78); brandX < width * 0.99; brandX += 1) {
+        var brandPixel = (brandY * width + brandX) * 4;
+        var brandRed = pixels.data[brandPixel];
+        var brandGreen = pixels.data[brandPixel + 1];
+        var brandBlue = pixels.data[brandPixel + 2];
+        if (brandRed > 150 && brandGreen < 90 && brandBlue < 140 &&
+          brandRed > brandGreen * 1.6 && brandRed > brandBlue * 1.15) {
+          brandPixels += 1;
+          brandMinX = Math.min(brandMinX, brandX);
+          brandMinY = Math.min(brandMinY, brandY);
+          brandMaxX = Math.max(brandMaxX, brandX);
+          brandMaxY = Math.max(brandMaxY, brandY);
+        }
+      }
+    }
+    var hasEmbeddedLogo = brandPixels > 300 &&
+      brandMaxX - brandMinX >= width * 0.025 &&
+      brandMaxY - brandMinY >= height * 0.025 &&
+      brandMaxX - brandMinX <= width * 0.15 &&
+      brandMaxY - brandMinY <= height * 0.15;
+
     imageCache[src] = imageChanged
-      ? { image: canvas, src: canvas.toDataURL("image/jpeg", 1) }
-      : { image: image, src: src };
+      ? { image: canvas, src: canvas.toDataURL("image/jpeg", 1), hasEmbeddedLogo: hasEmbeddedLogo }
+      : { image: image, src: src, hasEmbeddedLogo: hasEmbeddedLogo };
     return imageCache[src];
   };
 })();
